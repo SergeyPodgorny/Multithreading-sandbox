@@ -28,11 +28,14 @@ public class ArraysFilling extends Thread{
 			
 			
 			
-			System.out.println(i + " " + "from thread " + " " +threadNumber);
+//			System.out.println(i + " " + "from thread " + " " +threadNumber);
 
 		}
 		
 	}
 	
+	public void getLength() {
+		System.out.println(someArray.length);
+	}
 
 }
