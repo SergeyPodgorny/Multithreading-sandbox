@@ -4,7 +4,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Iterator;
 
-import com.multithreading.sandbox.arrays.ArraysFilling;
+import com.multithreading.sandbox.thread.and.runnable.ArraysFilling;
 
 public class Sandbox {
 
@@ -19,7 +19,7 @@ public class Sandbox {
 //
 //		}
 
-		ArraysFilling threadExample = new ArraysFilling(101);
+		ArraysFilling threadExample = new ArraysFilling(5);
 		
 		threadExample.start();
 		threadExample.getLength();

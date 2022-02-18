@@ -1,4 +1,4 @@
-package com.multithreading.sandbox.arrays;
+package com.multithreading.sandbox.thread.and.runnable;
 
 import java.time.Duration;
 import java.time.Instant;
