@@ -2,9 +2,9 @@ package com.multithreading.sandbox;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.util.Iterator;
 
-import com.multithreading.sandbox.thread.and.runnable.ArraysFilling;
+import com.multithreading.sandbox.thread.and.runnable.FillingWithInnerClass;
+import com.multithreading.sandbox.thread.and.runnable.SimpleArrayFilling;
 
 public class Sandbox {
 
@@ -19,14 +19,32 @@ public class Sandbox {
 //
 //		}
 
-		ArraysFilling threadExample = new ArraysFilling(5);
+//		ArraysFilling threadExample = new ArraysFilling(5);
+//		
+//		threadExample.start();
+//		threadExample.getLength();
 		
-		threadExample.start();
-		threadExample.getLength();
+		Instant startTime = Instant.now();
 		
+		FillingWithInnerClass threader = new FillingWithInnerClass();
 		
+		threader.createArray();
 		
+				
+		Instant endTime = Instant.now();
 		
+		System.out.println(Duration.between(startTime, endTime).toNanos());
+		
+		Instant startTime1 = Instant.now();
+		
+		SimpleArrayFilling nonThreading = new SimpleArrayFilling();
+		
+		nonThreading.createSimpleArray();
+		
+				
+		Instant endTime1 = Instant.now();
+		
+		System.out.println(Duration.between(startTime1, endTime1).toNanos());
 	}
 
 	
