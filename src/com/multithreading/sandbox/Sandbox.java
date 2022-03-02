@@ -29,11 +29,14 @@ public class Sandbox {
 		FillingWithInnerClass threader = new FillingWithInnerClass();
 		
 		threader.createArray();
-		
-				
+						
 		Instant endTime = Instant.now();
 		
-		System.out.println(Duration.between(startTime, endTime).toNanos());
+		System.out.println("Execution time with not optimised threads" + " " + Duration.between(startTime, endTime).toMillis());
+		
+		
+		
+		
 		
 		Instant startTime1 = Instant.now();
 		
@@ -44,7 +47,11 @@ public class Sandbox {
 				
 		Instant endTime1 = Instant.now();
 		
-		System.out.println(Duration.between(startTime1, endTime1).toNanos());
+		System.out.println("Execution time with single thread" + " " +Duration.between(startTime1, endTime1).toMillis());
+		
+		
+		
+		
 	}
 
 	

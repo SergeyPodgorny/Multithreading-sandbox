@@ -3,9 +3,9 @@ package com.multithreading.sandbox.thread.and.runnable;
 public class SimpleArrayFilling {
 	
 	
-	private int length = 49*49;
+	private int matrixSize = 49;
 	
-	private int[] someArray = new int[length]; 
+	private volatile int[][] someArray = new int[matrixSize*matrixSize][matrixSize*matrixSize];
 	
 	
 	public void createSimpleArray() {
@@ -14,25 +14,23 @@ public class SimpleArrayFilling {
 	}
 	
 	private void createSparseArray() {
-		for (int i = 0; i < length; i++) {
-			someArray[i] = 0;
+		for (int i = 1; i < matrixSize*matrixSize; i++) {
+			for (int j = 1; j < matrixSize*matrixSize; j++) {
+				if (i==j) {
+					someArray[i][j] = 1;
+				}
+			}
 		}
 	}
 
 	private void fillArray() {
-		for (int i = 0; i < length; i++) {
-			
-			if (i % 5 == 0) {
-				someArray[i] = 5;
+		for (int i = matrixSize + 1; i < matrixSize*matrixSize-matrixSize; i++) {
+			for (int j = matrixSize + 1; j < matrixSize*matrixSize-matrixSize; j++) {
+				someArray[i][j] = 8;
 			}
-			
 			
 		}
 	}
 	
-	public void printer() {
-		for (int i = 0; i < length; i++) {
-			System.out.println(someArray[i]);
-		}
-	}
+	
 }

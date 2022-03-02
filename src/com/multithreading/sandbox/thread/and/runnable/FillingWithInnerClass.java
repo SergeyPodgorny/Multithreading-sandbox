@@ -3,42 +3,40 @@ package com.multithreading.sandbox.thread.and.runnable;
 public class FillingWithInnerClass extends Thread{
 	
 	
-	private volatile int[] someArray = new int[500];
+	private int matrixSize = 49;
+	private volatile int[][] someArray = new int[matrixSize*matrixSize][matrixSize*matrixSize];
 	
 	
-	public void createArray() throws InterruptedException {
+	public void createArray() {
 		
 		SparseMatrix thread1 = new SparseMatrix();
 		thread1.start();
 		
 		
-		FillMatrix thread2 = new FillMatrix();
+		PrimaryDiagonal thread2 = new PrimaryDiagonal() ;
 		thread2.start();
+		
+		
+//		FillMatrix thread2 = new FillMatrix();
+//		thread2.start();
 		
 		
 	}
 	
-
+	
+	
+	
+	
+	
 	private class SparseMatrix extends Thread {
 		
 		@Override
 		public void run() {
-			for (int i = 0; i < 500; i++) {
-				someArray[i] = 0;
-			}
-		}
-		
-		
-	}
-	
-	private class FillMatrix extends Thread {
-		
-		@Override
-		public void run() {
-			for (int i = 0; i < 500; i++) {
-				
-				if (i % 5 == 0) {
-					someArray[i] = 5;
+			for (int i = 1; i < matrixSize*matrixSize; i++) {
+				for (int j = 1; j < matrixSize*matrixSize; j++) {
+					if (i==j) {
+						someArray[i][j] = 1;
+					}
 				}
 			}
 		}
@@ -46,12 +44,26 @@ public class FillingWithInnerClass extends Thread{
 		
 	}
 	
-	
-	public void printer() {
-		for (int i = 0; i < 500; i++) {
-			System.out.println(someArray[i]);
+	private class PrimaryDiagonal extends Thread{
+		
+		@Override
+		public void run() {
+			for (int i = matrixSize + 1; i < matrixSize*matrixSize-matrixSize; i++) {
+				for (int j = matrixSize + 1; j < matrixSize*matrixSize-matrixSize; j++) {
+					someArray[i][j] = 8;
+				}
+				
+			}
+			
 		}
+		
+		
 	}
+	
+	
+	
+	
+	
 	
 	
 }
