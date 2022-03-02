@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class InnerClass{
 	
 	
-	private int matrixSize = 15;
+	private int matrixSize = 4;
 	private volatile int[][] someArray = new int[matrixSize*matrixSize][matrixSize*matrixSize];
 	
 	
@@ -18,8 +18,8 @@ public class InnerClass{
 		PrimaryDiagonal thread2 = new PrimaryDiagonal() ;
 		thread2.start();
 		
-		
-
+		TopWidthDiagonal thread3 = new TopWidthDiagonal();
+		thread3.start();
 		
 		
 	}
@@ -33,7 +33,7 @@ public class InnerClass{
 		
 		@Override
 		public void run() {
-			for (int i = 0; i < matrixSize*matrixSize; i++) {
+		for (int i = 0; i < matrixSize*matrixSize; i++) {
 				for (int j = 0; j < matrixSize*matrixSize; j++) {
 					if (i==j) {
 						someArray[i][j] = 1;
@@ -50,10 +50,16 @@ public class InnerClass{
 		@Override
 		public void run() {
 			for (int i = matrixSize; i < matrixSize*matrixSize-matrixSize; i++) {
-				for (int j = matrixSize; j < matrixSize*matrixSize-matrixSize; j++) {
+				for (int j = matrixSize; j <matrixSize*matrixSize-matrixSize; j++) {
 					if (i==j) {
 						someArray[i][j] = 8;
+						if ((i % matrixSize == 0)^(i % matrixSize == 1)) {
+							someArray[i][j] = 1;
+						}
 					}
+					
+					
+					
 				}
 				
 			}
@@ -62,6 +68,25 @@ public class InnerClass{
 		
 		
 	}
+	
+	
+	private class TopWidthDiagonal extends Thread{
+		
+		@Override
+		public void run() {
+			for (int i = matrixSize + 1; i < matrixSize*matrixSize-matrixSize; i++) {
+				for (int j = matrixSize + 1; j < matrixSize*matrixSize-matrixSize; j++) {
+					if (i + 1 == j) {
+						someArray[i][j] = 3;
+					}
+				}
+				
+			}
+		}
+		
+		
+	}
+	
 	
 	
 	public void printer () {

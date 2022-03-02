@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class SimpleFilling {
 	
 	
-	private int matrixSize = 15;
+	private int matrixSize = 4;
 	
 	private volatile int[][] someArray = new int[matrixSize*matrixSize][matrixSize*matrixSize];
 	

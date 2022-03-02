@@ -50,7 +50,7 @@ public class Sandbox {
 		System.out.println("Execution time with single thread" + " " +Duration.between(startTime1, endTime1).toMillis());
 		
 		
-//		multiThreads.printer();
+		multiThreads.printer();
 		
 	}
 
