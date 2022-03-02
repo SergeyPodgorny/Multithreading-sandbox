@@ -1,9 +1,11 @@
 package com.multithreading.sandbox.thread.and.runnable;
 
-public class SimpleArrayFilling {
+import java.util.Arrays;
+
+public class SimpleFilling {
 	
 	
-	private int matrixSize = 49;
+	private int matrixSize = 15;
 	
 	private volatile int[][] someArray = new int[matrixSize*matrixSize][matrixSize*matrixSize];
 	
@@ -11,6 +13,7 @@ public class SimpleArrayFilling {
 	public void createSimpleArray() {
 		createSparseArray();
 		fillArray();
+//		printer();
 	}
 	
 	private void createSparseArray() {
@@ -24,13 +27,18 @@ public class SimpleArrayFilling {
 	}
 
 	private void fillArray() {
-		for (int i = matrixSize + 1; i < matrixSize*matrixSize-matrixSize; i++) {
-			for (int j = matrixSize + 1; j < matrixSize*matrixSize-matrixSize; j++) {
-				someArray[i][j] = 8;
+		for (int i = matrixSize; i < matrixSize*matrixSize-matrixSize; i++) {
+			for (int j = matrixSize; j < matrixSize*matrixSize-matrixSize; j++) {
+				if (i==j) {
+					someArray[i][j] = 8;
+				}
 			}
 			
 		}
 	}
 	
+	private void printer () {
+		System.out.println(Arrays.deepToString(someArray).replace("], ", "]\n"));
+	}
 	
 }

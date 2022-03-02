@@ -3,8 +3,8 @@ package com.multithreading.sandbox;
 import java.time.Duration;
 import java.time.Instant;
 
-import com.multithreading.sandbox.thread.and.runnable.FillingWithInnerClass;
-import com.multithreading.sandbox.thread.and.runnable.SimpleArrayFilling;
+import com.multithreading.sandbox.thread.and.runnable.InnerClass;
+import com.multithreading.sandbox.thread.and.runnable.SimpleFilling;
 
 public class Sandbox {
 
@@ -26,9 +26,9 @@ public class Sandbox {
 		
 		Instant startTime = Instant.now();
 		
-		FillingWithInnerClass threader = new FillingWithInnerClass();
+		InnerClass multiThreads = new InnerClass();
 		
-		threader.createArray();
+		multiThreads.createArray();
 						
 		Instant endTime = Instant.now();
 		
@@ -40,7 +40,7 @@ public class Sandbox {
 		
 		Instant startTime1 = Instant.now();
 		
-		SimpleArrayFilling nonThreading = new SimpleArrayFilling();
+		SimpleFilling nonThreading = new SimpleFilling();
 		
 		nonThreading.createSimpleArray();
 		
@@ -50,7 +50,7 @@ public class Sandbox {
 		System.out.println("Execution time with single thread" + " " +Duration.between(startTime1, endTime1).toMillis());
 		
 		
-		
+//		multiThreads.printer();
 		
 	}
 

@@ -1,9 +1,11 @@
 package com.multithreading.sandbox.thread.and.runnable;
 
-public class FillingWithInnerClass extends Thread{
+import java.util.Arrays;
+
+public class InnerClass{
 	
 	
-	private int matrixSize = 49;
+	private int matrixSize = 15;
 	private volatile int[][] someArray = new int[matrixSize*matrixSize][matrixSize*matrixSize];
 	
 	
@@ -17,8 +19,7 @@ public class FillingWithInnerClass extends Thread{
 		thread2.start();
 		
 		
-//		FillMatrix thread2 = new FillMatrix();
-//		thread2.start();
+
 		
 		
 	}
@@ -32,8 +33,8 @@ public class FillingWithInnerClass extends Thread{
 		
 		@Override
 		public void run() {
-			for (int i = 1; i < matrixSize*matrixSize; i++) {
-				for (int j = 1; j < matrixSize*matrixSize; j++) {
+			for (int i = 0; i < matrixSize*matrixSize; i++) {
+				for (int j = 0; j < matrixSize*matrixSize; j++) {
 					if (i==j) {
 						someArray[i][j] = 1;
 					}
@@ -48,9 +49,11 @@ public class FillingWithInnerClass extends Thread{
 		
 		@Override
 		public void run() {
-			for (int i = matrixSize + 1; i < matrixSize*matrixSize-matrixSize; i++) {
-				for (int j = matrixSize + 1; j < matrixSize*matrixSize-matrixSize; j++) {
-					someArray[i][j] = 8;
+			for (int i = matrixSize; i < matrixSize*matrixSize-matrixSize; i++) {
+				for (int j = matrixSize; j < matrixSize*matrixSize-matrixSize; j++) {
+					if (i==j) {
+						someArray[i][j] = 8;
+					}
 				}
 				
 			}
@@ -61,7 +64,9 @@ public class FillingWithInnerClass extends Thread{
 	}
 	
 	
-	
+	public void printer () {
+		System.out.println(Arrays.deepToString(someArray).replace("], ", "]\n"));
+	}
 	
 	
 	
