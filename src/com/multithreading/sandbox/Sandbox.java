@@ -10,19 +10,6 @@ public class Sandbox {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-//		for (int i = 0; i < 3; i++) {
-//			
-//			ArraysFilling threadExample = new ArraysFilling(i);
-//			
-//			threadExample.start();
-//			threadExample.getLength();
-//
-//		}
-
-//		ArraysFilling threadExample = new ArraysFilling(5);
-//		
-//		threadExample.start();
-//		threadExample.getLength();
 		
 		Instant startTime = Instant.now();
 		
@@ -32,7 +19,7 @@ public class Sandbox {
 						
 		Instant endTime = Instant.now();
 		
-		System.out.println("Execution time with not optimised threads" + " " + Duration.between(startTime, endTime).toMillis());
+		System.out.println("Execution time with possible memory leaks" + " " + Duration.between(startTime, endTime).toMillis());
 		
 //		multiThreads.printer();
 		
