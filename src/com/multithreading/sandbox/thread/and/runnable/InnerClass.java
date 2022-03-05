@@ -21,6 +21,11 @@ public class InnerClass{
 		TopWidthDiagonal thread3 = new TopWidthDiagonal();
 		thread3.start();
 		
+		BotttomWidgthDiagonal thread4 = new BotttomWidgthDiagonal();
+		thread4.start();
+		
+		
+		
 		
 	}
 	
@@ -57,13 +62,8 @@ public class InnerClass{
 							someArray[i][j] = 1;
 						}
 						
-						
 					}
-					
-					
-					
-//					^(i % matrixSize == 1)
-					
+							
 				}
 				
 			}
@@ -78,8 +78,8 @@ public class InnerClass{
 		
 		@Override
 		public void run() {
-			for (int i = matrixSize; i < matrixSize*matrixSize-matrixSize; i++) {
-				for (int j = matrixSize; j < matrixSize*matrixSize-matrixSize; j++) {
+			for (int i = matrixSize+1; i < matrixSize*matrixSize-matrixSize; i++) {
+				for (int j = matrixSize+1; j < matrixSize*matrixSize-matrixSize; j++) {
 					if (i + 1 == j) {
 						someArray[i][j] = 3;
 					}
@@ -90,6 +90,38 @@ public class InnerClass{
 		
 		
 	}
+	
+	private class BotttomWidgthDiagonal extends Thread{
+		
+		@Override
+		public void run() {
+			for (int i = matrixSize; i < matrixSize*matrixSize-matrixSize-1; i++) {
+				for (int j = matrixSize; j < matrixSize*matrixSize-matrixSize-1; j++) {
+					if (j + 1 == i) {
+						someArray[i][j] = 3;
+					}
+				}
+				
+			}
+		}
+		
+		
+	}
+	
+	private class TopHeightDiagonal extends Thread{
+		
+		@Override
+		public void run() {
+			
+			
+			
+			
+		}
+		
+	}
+	
+	
+	
 	
 	
 	
