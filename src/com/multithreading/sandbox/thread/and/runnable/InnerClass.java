@@ -24,8 +24,11 @@ public class InnerClass{
 		BotttomWidgthDiagonal thread4 = new BotttomWidgthDiagonal();
 		thread4.start();
 		
+		TopHeightDiagonal thread5 = new TopHeightDiagonal();
+		thread5.start();
 		
-		
+		BottomHeightDiagonal thread6 = new BottomHeightDiagonal();
+		thread6.start();
 		
 	}
 	
@@ -82,6 +85,9 @@ public class InnerClass{
 				for (int j = matrixSize+1; j < matrixSize*matrixSize-matrixSize; j++) {
 					if (i + 1 == j) {
 						someArray[i][j] = 3;
+						if ((i % matrixSize == 3)^(i % matrixSize == 0)) {
+							someArray[i][j] = 0;
+						}
 					}
 				}
 				
@@ -99,6 +105,9 @@ public class InnerClass{
 				for (int j = matrixSize; j < matrixSize*matrixSize-matrixSize-1; j++) {
 					if (j + 1 == i) {
 						someArray[i][j] = 3;
+						if ((i % matrixSize == 3)^(i % matrixSize == 0)) {
+							someArray[i][j] = 0;
+						}
 					}
 				}
 				
@@ -112,7 +121,18 @@ public class InnerClass{
 		
 		@Override
 		public void run() {
-			
+			for (int i = matrixSize+1; i < matrixSize*matrixSize-matrixSize+3; i++) {
+				for (int j = matrixSize+1; j < matrixSize*matrixSize-matrixSize+3; j++) {
+					if (i + matrixSize == j) {
+						someArray[i][j] = 5;
+						if ((i % matrixSize == 3)^(i % matrixSize == 0)) {
+							someArray[i][j] = 0;
+						}
+
+					}
+				}
+				
+			}
 			
 			
 			
@@ -121,6 +141,27 @@ public class InnerClass{
 	}
 	
 	
+	private class BottomHeightDiagonal extends Thread{
+		
+		@Override
+		public void run() {
+			for (int i = 1; i < matrixSize*matrixSize-matrixSize-1; i++) {
+				for (int j = 1; j < matrixSize*matrixSize-matrixSize-1; j++) {
+					if (j + matrixSize == i) {
+						someArray[i][j] = 5;
+						if ((i % matrixSize == 3)^(i % matrixSize == 0)) {
+							someArray[i][j] = 0;
+						}
+					}
+				}
+				
+			}
+			
+			
+			
+		}
+		
+	}
 	
 	
 	
