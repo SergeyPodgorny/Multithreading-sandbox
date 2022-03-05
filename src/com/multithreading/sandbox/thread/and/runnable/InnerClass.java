@@ -53,9 +53,11 @@ public class InnerClass{
 				for (int j = matrixSize+1; j <matrixSize*matrixSize-matrixSize-1; j++) {
 					if (i==j) {
 						someArray[i][j] = 8;
-						if ((i % matrixSize == 0)) {
+						if ((i % matrixSize == 3)^(i % matrixSize == 0)) {
 							someArray[i][j] = 1;
 						}
+						
+						
 					}
 					
 					
