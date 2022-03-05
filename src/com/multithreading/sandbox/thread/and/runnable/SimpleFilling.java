@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class SimpleFilling {
 	
 	
-	private int matrixSize = 4;
+	private int matrixSize = 49;
 	
 	private volatile int[][] someArray = new int[matrixSize*matrixSize][matrixSize*matrixSize];
 	
@@ -13,7 +13,7 @@ public class SimpleFilling {
 	public void createSimpleArray() {
 		createSparseArray();
 		fillArray();
-		printer();
+		
 	}
 	
 	
@@ -109,7 +109,7 @@ public class SimpleFilling {
 		
 	}
 	
-	private void printer () {
+	public void printer () {
 		System.out.println(Arrays.deepToString(someArray).replace("], ", "]\n"));
 	}
 	

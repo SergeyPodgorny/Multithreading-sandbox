@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class InnerClass{
 	
 	
-	private int matrixSize = 4;
+	private int matrixSize = 49;
 	private volatile int[][] someArray = new int[matrixSize*matrixSize][matrixSize*matrixSize];
 	
 	

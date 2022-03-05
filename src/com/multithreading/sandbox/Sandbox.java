@@ -34,7 +34,7 @@ public class Sandbox {
 		
 		System.out.println("Execution time with not optimised threads" + " " + Duration.between(startTime, endTime).toMillis());
 		
-		
+//		multiThreads.printer();
 		
 		
 		
@@ -49,8 +49,8 @@ public class Sandbox {
 		
 		System.out.println("Execution time with single thread" + " " +Duration.between(startTime1, endTime1).toMillis());
 		
-		
-//		multiThreads.printer();
+//		nonThreading.printer();
+
 		
 	}
 
