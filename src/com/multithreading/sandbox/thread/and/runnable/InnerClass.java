@@ -21,7 +21,7 @@ public class InnerClass{
 		TopWidthDiagonal thread3 = new TopWidthDiagonal();
 		thread3.start();
 		
-		BotttomWidgthDiagonal thread4 = new BotttomWidgthDiagonal();
+		BotttomWidthDiagonal thread4 = new BotttomWidthDiagonal();
 		thread4.start();
 		
 		TopHeightDiagonal thread5 = new TopHeightDiagonal();
@@ -97,7 +97,7 @@ public class InnerClass{
 		
 	}
 	
-	private class BotttomWidgthDiagonal extends Thread{
+	private class BotttomWidthDiagonal extends Thread{
 		
 		@Override
 		public void run() {
