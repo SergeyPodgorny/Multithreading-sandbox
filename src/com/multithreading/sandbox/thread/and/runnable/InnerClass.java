@@ -30,6 +30,13 @@ public class InnerClass{
 		BottomHeightDiagonal thread6 = new BottomHeightDiagonal();
 		thread6.start();
 		
+		
+		
+		
+		
+				
+				
+				
 	}
 	
 	

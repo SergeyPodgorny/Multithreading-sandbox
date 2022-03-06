@@ -1,0 +1,20 @@
+package com.multithreading.sandbox.thread.and.runnable;
+
+public class RunnableWithLambda {
+
+	
+	
+	
+	
+	Runnable r1 = () -> {
+		System.out.println("A message from lambda");
+	
+	};
+	
+	
+	Thread tr1 = new Thread(r1);
+	
+	
+	
+	
+}
