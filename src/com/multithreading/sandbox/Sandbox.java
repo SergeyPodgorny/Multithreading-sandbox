@@ -41,7 +41,15 @@ public class Sandbox {
 
 		RunnableWithLambda tr2 = new RunnableWithLambda();
 		
-		tr2.start();
+		Runnable r1 = () -> {
+			System.out.println("A message from lambda");
+		
+		};
+		
+		
+		Thread tr1 = new Thread(r1);
+		
+		tr1.start();
 	}
 
 	

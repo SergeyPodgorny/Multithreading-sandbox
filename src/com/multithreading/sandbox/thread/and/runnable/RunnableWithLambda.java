@@ -12,7 +12,7 @@ public class RunnableWithLambda extends Thread{
 	};
 	
 	
-	
+	Thread tr1 = new Thread(r1);
 	
 	
 	
