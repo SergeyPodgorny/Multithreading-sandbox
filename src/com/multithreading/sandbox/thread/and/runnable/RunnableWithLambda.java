@@ -1,6 +1,6 @@
 package com.multithreading.sandbox.thread.and.runnable;
 
-public class RunnableWithLambda {
+public class RunnableWithLambda extends Thread{
 
 	
 	
@@ -12,7 +12,7 @@ public class RunnableWithLambda {
 	};
 	
 	
-	Thread tr1 = new Thread(r1);
+	
 	
 	
 	

@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.time.Instant;
 
 import com.multithreading.sandbox.thread.and.runnable.InnerClass;
+import com.multithreading.sandbox.thread.and.runnable.RunnableWithLambda;
 import com.multithreading.sandbox.thread.and.runnable.SimpleFilling;
 
 public class Sandbox {
@@ -38,7 +39,9 @@ public class Sandbox {
 		
 //		nonThreading.printer();
 
+		RunnableWithLambda tr2 = new RunnableWithLambda();
 		
+		tr2.start();
 	}
 
 	
