@@ -4,10 +4,6 @@ public class RunnableWithLambda extends Thread{
 
 
 	
-	
-	
-	
-	
 
 	
 }

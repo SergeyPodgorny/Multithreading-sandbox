@@ -2,7 +2,7 @@ package com.multithreading.sandbox.thread.and.runnable;
 
 import java.util.Arrays;
 
-public class SimpleFilling {
+public class SimpleThread {
 	
 	
 	private int matrixSize = 49;
