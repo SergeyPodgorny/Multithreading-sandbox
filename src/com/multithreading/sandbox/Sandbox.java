@@ -51,7 +51,7 @@ public class Sandbox {
 		
 		Instant endTime2 = Instant.now();
 		
-		System.out.println("Execution time with nested anonymous nested non static classes" + " " + Duration.between(startTime2, endTime2).toMillis());
+		System.out.println("Execution time with nested anonymous non static classes" + " " + Duration.between(startTime2, endTime2).toMillis());
 		
 		
 		// inner non static classes built by runable interface with lambdas
