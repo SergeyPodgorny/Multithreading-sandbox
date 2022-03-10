@@ -3,8 +3,8 @@ package com.multithreading.sandbox;
 import java.time.Duration;
 import java.time.Instant;
 
+import com.multithreading.sandbox.thread.and.runnable.AnonymousClass;
 import com.multithreading.sandbox.thread.and.runnable.InnerClass;
-import com.multithreading.sandbox.thread.and.runnable.RunnableWithLambda;
 import com.multithreading.sandbox.thread.and.runnable.SimpleFilling;
 
 public class Sandbox {
@@ -35,21 +35,19 @@ public class Sandbox {
 				
 		Instant endTime1 = Instant.now();
 		
-		System.out.println("Execution time with single thread" + " " +Duration.between(startTime1, endTime1).toMillis());
+		System.out.println("Execution time with single thread" + " " + Duration.between(startTime1, endTime1).toMillis());
 		
 //		nonThreading.printer();
 
-		RunnableWithLambda tr2 = new RunnableWithLambda();
+//		RunnableWithLambda tr2 = new RunnableWithLambda();
+//				
+//		tr2.start();
+//		
+		AnonymousClass a1 = new AnonymousClass();
 		
-		Runnable r1 = () -> {
-			System.out.println("A message from lambda");
-		
-		};
+		a1.start();
 		
 		
-		Thread tr1 = new Thread(r1);
-		
-		tr1.start();
 	}
 
 	
