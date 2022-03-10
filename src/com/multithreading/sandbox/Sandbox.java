@@ -64,7 +64,7 @@ public class Sandbox {
 		
 		Instant endTime3 = Instant.now();
 		
-		System.out.println("Execution time inner non static classes built by runable interface with lambdas" + " " + Duration.between(startTime3, endTime3).toMillis());
+		System.out.println("Execution time with nested non static classes built by runable interface with lambdas" + " " + Duration.between(startTime3, endTime3).toMillis());
 		
 	}
 
