@@ -5,6 +5,7 @@ import java.time.Instant;
 
 import com.multithreading.sandbox.thread.and.runnable.AnonymousClass;
 import com.multithreading.sandbox.thread.and.runnable.InnerClass;
+import com.multithreading.sandbox.thread.and.runnable.RunnableWithLambda;
 import com.multithreading.sandbox.thread.and.runnable.SingleThread;
 
 public class Sandbox {
@@ -52,6 +53,20 @@ public class Sandbox {
 		Instant endTime2 = Instant.now();
 		
 		System.out.println("Execution time with anonymous classes" + " " + Duration.between(startTime2, endTime2).toMillis());
+		
+		
+		// runable with lambdas
+		
+		Instant startTime3 = Instant.now();
+		
+		RunnableWithLambda lambdaThreading = new RunnableWithLambda();
+		
+		lambdaThreading.start();
+		
+		Instant endTime3 = Instant.now();
+		
+		System.out.println("Execution time with lambdas and runnable" + " " + Duration.between(startTime3, endTime3).toMillis());
+		
 	}
 
 	
