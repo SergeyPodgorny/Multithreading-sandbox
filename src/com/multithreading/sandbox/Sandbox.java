@@ -12,6 +12,8 @@ public class Sandbox {
 	public static void main(String[] args) throws InterruptedException {
 		
 		
+		
+		// Inner non static classes
 		Instant startTime = Instant.now();
 		
 		InnerClass multiThreads = new InnerClass();
@@ -22,9 +24,9 @@ public class Sandbox {
 		
 		System.out.println("Execution time with possible memory leaks" + " " + Duration.between(startTime, endTime).toMillis());
 		
-//		multiThreads.printer();
+
 		
-		
+		// Single thread
 		
 		Instant startTime1 = Instant.now();
 		
@@ -32,22 +34,20 @@ public class Sandbox {
 		
 		nonThreading.createSimpleArray();
 		
-				
 		Instant endTime1 = Instant.now();
 		
 		System.out.println("Execution time with single thread" + " " + Duration.between(startTime1, endTime1).toMillis());
 		
-//		nonThreading.printer();
-
-//		RunnableWithLambda tr2 = new RunnableWithLambda();
-//				
-//		tr2.start();
-//		
+		
+		
+		
+		// Inner anonymous classes
+		
 		Instant startTime2 = Instant.now();
 		
-		AnonymousClass a1 = new AnonymousClass();
+		AnonymousClass anonThreading = new AnonymousClass();
 		
-		a1.start();
+		anonThreading.start();
 		
 		Instant endTime2 = Instant.now();
 		

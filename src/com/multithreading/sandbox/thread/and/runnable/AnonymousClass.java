@@ -1,5 +1,7 @@
 package com.multithreading.sandbox.thread.and.runnable;
 
+import java.util.Arrays;
+
 public class AnonymousClass extends Thread{
 	
 	
@@ -101,18 +103,23 @@ new Thread() {
 		
 		@Override
 		public void run() {
-			for (int i = matrixSize; i < matrixSize*matrixSize-matrixSize-1; i++) {
-				for (int j = matrixSize; j < matrixSize*matrixSize-matrixSize-1; j++) {
-					if (j + 1 == i) {
-						someArray[i][j] = 3;
+			for (int i = matrixSize+1; i < matrixSize*matrixSize-matrixSize+3; i++) {
+				for (int j = matrixSize+1; j < matrixSize*matrixSize-matrixSize+3; j++) {
+					if (i + matrixSize == j) {
+						someArray[i][j] = 5;
 						if ((i % matrixSize == 3)^(i % matrixSize == 0)) {
 							someArray[i][j] = 0;
 						}
+
 					}
 				}
 				
 			}
-	}
+			
+			
+			
+		}
+	
 		
 	}.start();
 	
@@ -148,7 +155,9 @@ new Thread() {
 	}
 	
 	
-	
+	public void printer() {
+		System.out.println(Arrays.deepToString(someArray).replace("], ", "]\n"));
+	}
 	
 	
 	
