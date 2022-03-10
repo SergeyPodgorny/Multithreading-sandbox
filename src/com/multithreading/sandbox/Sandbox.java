@@ -5,7 +5,7 @@ import java.time.Instant;
 
 import com.multithreading.sandbox.thread.and.runnable.AnonymousClass;
 import com.multithreading.sandbox.thread.and.runnable.InnerClass;
-import com.multithreading.sandbox.thread.and.runnable.SimpleThread;
+import com.multithreading.sandbox.thread.and.runnable.SingleThread;
 
 public class Sandbox {
 
@@ -28,7 +28,7 @@ public class Sandbox {
 		
 		Instant startTime1 = Instant.now();
 		
-		SimpleThread nonThreading = new SimpleThread();
+		SingleThread nonThreading = new SingleThread();
 		
 		nonThreading.createSimpleArray();
 		
@@ -51,7 +51,7 @@ public class Sandbox {
 		
 		Instant endTime2 = Instant.now();
 		
-		System.out.println("Execution time with anonymous classes" + " " + Duration.between(startTime1, endTime1).toMillis());
+		System.out.println("Execution time with anonymous classes" + " " + Duration.between(startTime2, endTime2).toMillis());
 	}
 
 	

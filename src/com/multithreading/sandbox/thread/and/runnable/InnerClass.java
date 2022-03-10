@@ -51,7 +51,7 @@ public class InnerClass{
 		for (int i = 0; i < matrixSize*matrixSize; i++) {
 				for (int j = 0; j < matrixSize*matrixSize; j++) {
 					if (i==j) {
-						someArray[i][j] = 2;
+						someArray[i][j] = 1;
 					}
 				}
 			}
