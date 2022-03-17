@@ -1,5 +1,6 @@
 package com.multithreading.sandbox.executorAPI.java7.benchmark;
 
+import java.util.Arrays;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import static com.multithreading.sandbox.Sandbox.MATRIX_SIZE;
@@ -104,12 +105,22 @@ public class RunnableTask {
 					
 				}
 		
+				
+	
 	};
 	// end of lambda expression
 	
 	taskLauncher.execute(mainTask);
 	
 	
+	
 	}
-
+	
+	
+	@SuppressWarnings("unused")
+	private void printer () {
+		System.out.println(Arrays.deepToString(someArray).replace("], ", "]\n"));
+	}
+	
+	
 }
