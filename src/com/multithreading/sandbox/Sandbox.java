@@ -19,15 +19,7 @@ public class Sandbox {
 		
 		// Single thread
 		
-		Instant startTime1 = Instant.now();
-				
-		SingleThread nonThreading = new SingleThread();
-			
-		nonThreading.createSimpleArray();
-				
-		Instant endTime1 = Instant.now();
-				
-		System.out.println("Execution time with single thread" + " " + Duration.between(startTime1, endTime1).toMillis());
+		singleThread();
 		
 				
 		
@@ -86,7 +78,18 @@ public class Sandbox {
 		
 	}
 
-	
+	private static void singleThread() {
+		
+		Instant startTime1 = Instant.now();
+		
+		SingleThread nonThreading = new SingleThread();
+			
+		nonThreading.createSimpleArray();
+				
+		Instant endTime1 = Instant.now();
+				
+		System.out.println("Execution time with single thread" + " " + Duration.between(startTime1, endTime1).toMillis());
+	}
 
 	
 	
