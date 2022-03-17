@@ -2,20 +2,21 @@ package com.multithreading.sandbox.thread.and.runnable.java1.benchmark;
 
 import static com.multithreading.sandbox.Sandbox.MATRIX_SIZE;
 
-import java.util.Arrays;
 
-public class InnerClass{
+
+
+
+public class NestedStaticClasses {
+
 	
+private static volatile int[][] someArray = new int[MATRIX_SIZE*MATRIX_SIZE][MATRIX_SIZE*MATRIX_SIZE];
 	
-	
-	private volatile int[][] someArray = new int[MATRIX_SIZE*MATRIX_SIZE][MATRIX_SIZE*MATRIX_SIZE];
-	
-	
-	public void createArray() {
+
+	public static void createArray() {
+		
 		
 		SparseMatrix thread1 = new SparseMatrix();
 		thread1.start();
-		
 		
 		PrimaryDiagonal thread2 = new PrimaryDiagonal() ;
 		thread2.start();
@@ -39,7 +40,7 @@ public class InnerClass{
 	
 	
 	
-	private class SparseMatrix extends Thread {
+	private static class SparseMatrix extends Thread {
 		
 		@Override
 		public void run() {
@@ -55,7 +56,7 @@ public class InnerClass{
 		
 	}
 	
-	private class PrimaryDiagonal extends Thread{
+	private static class PrimaryDiagonal extends Thread{
 		
 		@Override
 		public void run() {
@@ -79,7 +80,7 @@ public class InnerClass{
 	}
 	
 	
-	private class TopWidthDiagonal extends Thread{
+	private static class TopWidthDiagonal extends Thread{
 		
 		@Override
 		public void run() {
@@ -99,7 +100,7 @@ public class InnerClass{
 		
 	}
 	
-	private class BotttomWidthDiagonal extends Thread{
+	private static class BotttomWidthDiagonal extends Thread{
 		
 		@Override
 		public void run() {
@@ -119,7 +120,7 @@ public class InnerClass{
 		
 	}
 	
-	private class TopHeightDiagonal extends Thread{
+	private static class TopHeightDiagonal extends Thread{
 		
 		@Override
 		public void run() {
@@ -142,7 +143,7 @@ public class InnerClass{
 	}
 	
 	
-	private class BottomHeightDiagonal extends Thread{
+	private static class BottomHeightDiagonal extends Thread{
 		
 		@Override
 		public void run() {
@@ -163,12 +164,13 @@ public class InnerClass{
 	
 	
 	
-	@SuppressWarnings("unused")
-	public void printer () {
-		System.out.println(Arrays.deepToString(someArray).replace("], ", "]\n"));
-	}
 	
 	
-	}
 	
+	
+	
+	
+	
+	
+	}	
 }

@@ -5,7 +5,8 @@ import java.time.Instant;
 
 import com.multithreading.sandbox.executorAPI.java7.benchmark.RunnableTask;
 import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.AnonymousClass;
-import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.InnerClass;
+import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.NestedClasses;
+import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.NestedStaticClasses;
 import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.RunnableWithLambda;
 import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.SingleThread;
 
@@ -33,9 +34,13 @@ public class Sandbox {
 		
 		// nested anonymous nested non static classes
 		
-		anonInnerClassesTime();
+		anonNestedClassesTime();
 		
-		// inner non static classes built by runable interface with lambdas
+		// nested static classes
+		
+		staticNestedClassesTime();
+		
+		// nested non static classes built by runable interface with lambdas
 		
 		runnableWithLambdas();
 		
@@ -64,7 +69,7 @@ public class Sandbox {
 		
 		Instant startTime = Instant.now();
 		
-		InnerClass multiThreads = new InnerClass();
+		NestedClasses multiThreads = new NestedClasses();
 		
 		multiThreads.createArray();
 						
@@ -74,7 +79,7 @@ public class Sandbox {
 	}
 	
 	
-	private static void anonInnerClassesTime() {
+	private static void anonNestedClassesTime() {
 		
 		Instant startTime2 = Instant.now();
 		
@@ -85,6 +90,21 @@ public class Sandbox {
 		Instant endTime2 = Instant.now();
 		
 		System.out.println("Execution time with nested anonymous non static classes" + " " + Duration.between(startTime2, endTime2).toMillis());
+		
+	}
+	
+	
+	private static void staticNestedClassesTime() {
+		
+		Instant startTime2 = Instant.now();
+		
+		NestedStaticClasses staticClasses = new NestedStaticClasses();
+		
+		staticClasses.createArray();
+		
+		Instant endTime2 = Instant.now();
+		
+		System.out.println("Execution time with nested static classes" + " " + Duration.between(startTime2, endTime2).toMillis());
 		
 	}
 	
