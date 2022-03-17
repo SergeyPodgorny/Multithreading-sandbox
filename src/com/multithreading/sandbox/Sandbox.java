@@ -3,12 +3,11 @@ package com.multithreading.sandbox;
 import java.time.Duration;
 import java.time.Instant;
 
-
-
-import com.multithreading.sandbox.thread.and.runnable.AnonymousClass;
-import com.multithreading.sandbox.thread.and.runnable.InnerClass;
-import com.multithreading.sandbox.thread.and.runnable.RunnableWithLambda;
-import com.multithreading.sandbox.thread.and.runnable.SingleThread;
+import com.multithreading.sandbox.executorAPI.java7.RunnableTask;
+import com.multithreading.sandbox.thread.and.runnable.java1.AnonymousClass;
+import com.multithreading.sandbox.thread.and.runnable.java1.InnerClass;
+import com.multithreading.sandbox.thread.and.runnable.java1.RunnableWithLambda;
+import com.multithreading.sandbox.thread.and.runnable.java1.SingleThread;
 
 public class Sandbox {
 
@@ -103,12 +102,11 @@ public class Sandbox {
 		
 		Instant startTime4 = Instant.now();
 		
-		
-		
+		RunnableTask task4 = new RunnableTask();
 		
 		Instant endTime4 = Instant.now();
 		
-		
+		System.out.println("Execution time with executor API" + " " + Duration.between(startTime4, endTime4).toMillis());		
 		
 	}
 	

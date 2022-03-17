@@ -1,33 +1,37 @@
-package com.multithreading.sandbox.thread.and.runnable;
+package com.multithreading.sandbox.thread.and.runnable.java1;
 
-public class RunnableWithLambda extends Thread{
+import java.util.Arrays;
 
+public class SingleThread {
+	
 	
 	private int matrixSize = 49;
 	
 	private volatile int[][] someArray = new int[matrixSize*matrixSize][matrixSize*matrixSize];
-
 	
-	{
 	
-			
-	Runnable r1 = () -> {
-		// sparse matrix creation
+	public void createSimpleArray() {
+		createSparseArray();
+		fillArray();
+		
+	}
+	
+	
+	
+	
+	private void createSparseArray() {
 		for (int i = 0; i < matrixSize*matrixSize; i++) {
 			for (int j = 0; j < matrixSize*matrixSize; j++) {
 				if (i==j) {
-					someArray[i][j] = 2;
+					someArray[i][j] = 1;
 				}
 			}
 		}
-	};
+	}
+
 	
-	Thread t1 = new Thread(r1);
-	t1.start();
-	
-	
-	Runnable r2 = () -> {
-		//central diagonal
+	// primaryDiagonal
+	private void fillArray() {
 		for (int i = matrixSize+1; i < matrixSize*matrixSize-matrixSize-1; i++) {
 			for (int j = matrixSize+1; j <matrixSize*matrixSize-matrixSize-1; j++) {
 				if (i==j) {
@@ -42,13 +46,8 @@ public class RunnableWithLambda extends Thread{
 			
 		}
 		
+	
 		
-	};
-	
-	Thread t2 = new Thread(r2);
-	t2.start();
-	
-	Runnable r3 = () -> {
 		
 		//TopWidthDiagonal
 		
@@ -63,17 +62,9 @@ public class RunnableWithLambda extends Thread{
 			}
 			
 		}
-	};
-
-	Thread t3 = new Thread(r3);
-	t3.start();
-	
-	
-	
-	Runnable r4 = () -> {
 		
-		//BottomWidthDiagonal
 		
+		//BotWidthDiagonal
 		for (int i = matrixSize; i < matrixSize*matrixSize-matrixSize-1; i++) {
 			for (int j = matrixSize; j < matrixSize*matrixSize-matrixSize-1; j++) {
 				if (j + 1 == i) {
@@ -86,16 +77,7 @@ public class RunnableWithLambda extends Thread{
 			
 		}
 		
-	};
-	
-	Thread  t4 = new Thread(r4);
-	t4.start();
-	
-	
-	Runnable r5 = () -> {
-		
-		//TopHeightDiagonal
-		
+		//ToHeightDiagonal
 		for (int i = matrixSize+1; i < matrixSize*matrixSize-matrixSize+3; i++) {
 			for (int j = matrixSize+1; j < matrixSize*matrixSize-matrixSize+3; j++) {
 				if (i + matrixSize == j) {
@@ -103,20 +85,14 @@ public class RunnableWithLambda extends Thread{
 					if ((i % matrixSize == 3)^(i % matrixSize == 0)) {
 						someArray[i][j] = 0;
 					}
-
 				}
 			}
 			
 		}
-	};
-	
-	Thread t5 = new Thread(r5);
-	t5.start();
-	
-	
-	Runnable r6 = () -> {
 		
-		//TopHeightDiagonal
+		
+		//BottomHeightDiagonal
+		
 		for (int i = 1; i < matrixSize*matrixSize-matrixSize-1; i++) {
 			for (int j = 1; j < matrixSize*matrixSize-matrixSize-1; j++) {
 				if (j + matrixSize == i) {
@@ -128,12 +104,13 @@ public class RunnableWithLambda extends Thread{
 			}
 			
 		}
-	};
+		
+		
+		
+	}
 	
-	Thread t6 = new Thread(r6);
-	t6.start();
-	
-	
+	public void printer () {
+		System.out.println(Arrays.deepToString(someArray).replace("], ", "]\n"));
 	}
 	
 }

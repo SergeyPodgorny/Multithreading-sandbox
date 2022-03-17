@@ -1,4 +1,4 @@
-package com.multithreading.sandbox.thread.and.runnable;
+package com.multithreading.sandbox.thread.and.runnable.java1;
 
 import java.util.Arrays;
 

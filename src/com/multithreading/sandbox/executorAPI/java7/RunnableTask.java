@@ -1,4 +1,4 @@
-package com.multithreading.sandbox.executorAPI;
+package com.multithreading.sandbox.executorAPI.java7;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -15,7 +15,7 @@ public class RunnableTask {
 	
 	{
 		
-	Executor r1 = Executors.newFixedThreadPool(2);	
+	Executor taskLauncher = Executors.newFixedThreadPool(2);	
 		
 	
 	Runnable mainTask = () -> {
@@ -105,8 +105,7 @@ public class RunnableTask {
 	};
 	// end of lambda expression
 	
-	
-	
+	taskLauncher.execute(mainTask);
 	
 	
 	}
