@@ -1,5 +1,8 @@
 package com.multithreading.sandbox.executorAPI;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
 public class RunnableTask {
 	
 	
@@ -11,6 +14,9 @@ public class RunnableTask {
 	
 	
 	{
+		
+	Executor r1 = Executors.newFixedThreadPool(2);	
+		
 	
 	Runnable mainTask = () -> {
 		
@@ -23,7 +29,9 @@ public class RunnableTask {
 				}
 			}
 		}
-	
+
+		
+		// primaryDiagonal
 		for (int i = matrixSize+1; i < matrixSize*matrixSize-matrixSize-1; i++) {
 			for (int j = matrixSize+1; j <matrixSize*matrixSize-matrixSize-1; j++) {
 				if (i==j) {
@@ -38,15 +46,68 @@ public class RunnableTask {
 			
 		}
 	
-	
-	
-	
-	
-	
-	
-	
-	
+		//TopWidthDiagonal
+		
+			for (int i = matrixSize+1; i < matrixSize*matrixSize-matrixSize; i++) {
+				for (int j = matrixSize+1; j < matrixSize*matrixSize-matrixSize; j++) {
+					if (i + 1 == j) {
+						someArray[i][j] = 3;
+						if ((i % matrixSize == 3)^(i % matrixSize == 0)) {
+								someArray[i][j] = 0;
+							}
+						}
+					}
+					
+				}
+				
+				
+				//BotWidthDiagonal
+				for (int i = matrixSize; i < matrixSize*matrixSize-matrixSize-1; i++) {
+					for (int j = matrixSize; j < matrixSize*matrixSize-matrixSize-1; j++) {
+						if (j + 1 == i) {
+							someArray[i][j] = 3;
+							if ((i % matrixSize == 3)^(i % matrixSize == 0)) {
+								someArray[i][j] = 0;
+							}
+						}
+					}
+					
+				}
+				
+				//ToHeightDiagonal
+				for (int i = matrixSize+1; i < matrixSize*matrixSize-matrixSize+3; i++) {
+					for (int j = matrixSize+1; j < matrixSize*matrixSize-matrixSize+3; j++) {
+						if (i + matrixSize == j) {
+							someArray[i][j] = 5;
+							if ((i % matrixSize == 3)^(i % matrixSize == 0)) {
+								someArray[i][j] = 0;
+							}
+						}
+					}
+					
+				}
+				
+				
+				//BottomHeightDiagonal
+				
+				for (int i = 1; i < matrixSize*matrixSize-matrixSize-1; i++) {
+					for (int j = 1; j < matrixSize*matrixSize-matrixSize-1; j++) {
+						if (j + matrixSize == i) {
+							someArray[i][j] = 5;
+							if ((i % matrixSize == 3)^(i % matrixSize == 0)) {
+								someArray[i][j] = 0;
+							}
+						}
+					}
+					
+				}
+		
 	};
+	// end of lambda expression
+	
+	
+	
+	
 	
 	}
 
