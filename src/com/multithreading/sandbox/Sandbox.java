@@ -5,7 +5,7 @@ import java.time.Instant;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-import com.multithreading.sandbox.executorAPI.RunnabeTasks;
+import com.multithreading.sandbox.executorAPI.RunnableTask;
 import com.multithreading.sandbox.thread.and.runnable.AnonymousClass;
 import com.multithreading.sandbox.thread.and.runnable.InnerClass;
 import com.multithreading.sandbox.thread.and.runnable.RunnableWithLambda;
@@ -104,11 +104,8 @@ public class Sandbox {
 		
 		Instant startTime4 = Instant.now();
 		
-		Executor f1 = Executors.newFixedThreadPool(3);
 		
-		Runnable r1 = () -> System.out.println("Hey there");
 		
-		f1.execute(r1);
 		
 		Instant endTime4 = Instant.now();
 		
