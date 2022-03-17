@@ -36,17 +36,7 @@ public class Sandbox {
 		
 		// launching runnable task with Executros class
 		
-		Instant startTime4 = Instant.now();
-		
-		Executor f1 = Executors.newFixedThreadPool(3);
-		
-		Runnable r1 = () -> System.out.println("Hey there");
-		
-		f1.execute(r1);
-		
-		Instant endTime4 = Instant.now();
-		
-		
+		method1();
 		
 		
 	}
@@ -106,6 +96,27 @@ public class Sandbox {
 		
 		System.out.println("Execution time with nested non static classes built by runable interface with lambdas" + " " + Duration.between(startTime3, endTime3).toMillis());
 	}
+	
+	//TODO refactor this later
+	
+	
+	private static void method1() {
+		
+		Instant startTime4 = Instant.now();
+		
+		Executor f1 = Executors.newFixedThreadPool(3);
+		
+		Runnable r1 = () -> System.out.println("Hey there");
+		
+		f1.execute(r1);
+		
+		Instant endTime4 = Instant.now();
+		
+		
+		
+	}
+	
+	
 	
 	
 }
