@@ -7,17 +7,17 @@ public class MatrixFactoryLauncher {
 		
 	MatrixFactory matrixFactory = new MatrixFactory();
 	
-	matrixFactory.createThread("SparseMatrix").run();
+	matrixFactory.createThread("1").run();
 	
-	matrixFactory.createThread("PrimaryDiagonal").run();
+	matrixFactory.createThread("2").run();
 	
-	matrixFactory.createThread("BotttomWidthDiagonal").run();
+	matrixFactory.createThread("3").run();
 	
-	matrixFactory.createThread("TopWidthDiagonal").run();
+	matrixFactory.createThread("4").run();
 	
-	matrixFactory.createThread("BotttomHeightDiagonal").run();
+	matrixFactory.createThread("5").run();
 	
-	matrixFactory.createThread("TopHeightDiagonal").run();
+	matrixFactory.createThread("6").run();
 	
 	}
 }
