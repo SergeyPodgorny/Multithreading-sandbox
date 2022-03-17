@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.time.Instant;
 
 import com.multithreading.sandbox.executorAPI.java7.benchmark.RunnableTask;
+import com.multithreading.sandbox.thread.and.runnable.abstractFactory.MatrixFactoryLauncher;
 import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.AnonymousClass;
 import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.NestedClasses;
 import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.NestedStaticClasses;
@@ -45,9 +46,16 @@ public class Sandbox {
 		
 		runnableWithLambdas();
 		
+		// running the task with factory pattern
+		
+		factoryThreading();
+		
 		// launching runnable task with Executros class
 		
 		method1();
+		
+		
+		// 
 		
 		
 	}
@@ -122,6 +130,20 @@ public class Sandbox {
 		
 		System.out.println("Execution time with nested non static classes built by runable interface with lambdas" + " " + Duration.between(startTime3, endTime3).toMillis());
 	}
+	
+	
+	private static void factoryThreading() {
+		
+		Instant startTime6 = Instant.now();
+		
+		MatrixFactoryLauncher launcher = new MatrixFactoryLauncher();
+		
+		Instant endTime6 = Instant.now();
+		
+		System.out.println("Execution time with factory pattern and threads" + " " + Duration.between(startTime6, endTime6).toMillis());	
+	}
+	
+	
 	
 	//TODO refactor this later
 	

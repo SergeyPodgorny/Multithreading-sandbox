@@ -33,9 +33,7 @@ public class MatrixFactory {
 			
 				return new BottomHeightDiagonal(someArray);
 				
-			} else {
-				
-				return null;
+			} 
 				
 			}
 			
@@ -44,6 +42,6 @@ public class MatrixFactory {
 			
 			
 			
-		}
+		
 	
 }
