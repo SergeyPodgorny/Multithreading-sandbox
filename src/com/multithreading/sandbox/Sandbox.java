@@ -21,7 +21,6 @@ public class Sandbox {
 		
 		singleThreadingTime();
 		
-			
 		
 		// nested non static classes
 		
@@ -29,20 +28,11 @@ public class Sandbox {
 		
 		// nested anonymous nested non static classes
 		
-		
-		
+		anonInnerClassesTime();
 		
 		// inner non static classes built by runable interface with lambdas
 		
-		Instant startTime3 = Instant.now();
-		
-		RunnableWithLambda lambdaThreading = new RunnableWithLambda();
-		
-		lambdaThreading.start();
-		
-		Instant endTime3 = Instant.now();
-		
-		System.out.println("Execution time with nested non static classes built by runable interface with lambdas" + " " + Duration.between(startTime3, endTime3).toMillis());
+		runnableWithLambdas();
 		
 		// launching runnable task with Executros class
 		
@@ -104,7 +94,18 @@ public class Sandbox {
 	}
 	
 	
-	
+	private static void runnableWithLambdas() {
+		
+		Instant startTime3 = Instant.now();
+		
+		RunnableWithLambda lambdaThreading = new RunnableWithLambda();
+		
+		lambdaThreading.start();
+		
+		Instant endTime3 = Instant.now();
+		
+		System.out.println("Execution time with nested non static classes built by runable interface with lambdas" + " " + Duration.between(startTime3, endTime3).toMillis());
+	}
 	
 	
 }
