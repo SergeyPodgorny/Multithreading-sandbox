@@ -32,13 +32,14 @@ public class Sandbox {
 		
 		nestedInnerClassesTime();
 		
-		// nested anonymous nested non static classes
-		
-		anonNestedClassesTime();
 		
 		// nested static classes
 		
 		staticNestedClassesTime();
+		
+		// nested anonymous nested non static classes
+		
+		anonNestedClassesTime();
 		
 		// nested non static classes built by runable interface with lambdas
 		
