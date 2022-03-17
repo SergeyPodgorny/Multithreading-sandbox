@@ -2,7 +2,10 @@ package com.multithreading.sandbox;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
+import com.multithreading.sandbox.executorAPI.RunnabeTasks;
 import com.multithreading.sandbox.thread.and.runnable.AnonymousClass;
 import com.multithreading.sandbox.thread.and.runnable.InnerClass;
 import com.multithreading.sandbox.thread.and.runnable.RunnableWithLambda;
@@ -65,6 +68,21 @@ public class Sandbox {
 		Instant endTime3 = Instant.now();
 		
 		System.out.println("Execution time with nested non static classes built by runable interface with lambdas" + " " + Duration.between(startTime3, endTime3).toMillis());
+		
+		// launching runnable task with Executros class
+		
+		Instant startTime4 = Instant.now();
+		
+		Executor f1 = Executors.newFixedThreadPool(3);
+		
+		Runnable r1 = () -> System.out.println("Hey there");
+		
+		f1.execute(r1);
+		
+		Instant endTime4 = Instant.now();
+		
+		
+		
 		
 	}
 
