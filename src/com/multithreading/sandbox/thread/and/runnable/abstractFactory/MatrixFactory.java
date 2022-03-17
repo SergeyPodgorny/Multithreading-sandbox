@@ -10,16 +10,40 @@ public class MatrixFactory {
 		public RunnableTask createThread(String threadName) {
 			
 			if(threadName.equalsIgnoreCase("sparseMatrix")) {
+			
 				return new SparseMatrix(someArray);
+			
 			} else if (threadName.equalsIgnoreCase("PrimaryDiagonal")) {
+			
 				return new PrimaryDiagonal(someArray);
+			
+			} else if(threadName.equalsIgnoreCase("BottomWidthDiagonal")) {
+				
+				return new BotttomWidthDiagonal(someArray);
+				
+			} else if(threadName.equalsIgnoreCase("TopWidthDiagonal")) {
+			
+				return new TopWidthDiagonal(someArray);
+				
+			} else if(threadName.equalsIgnoreCase("TopHeightDiagonal")) {
+			
+				return new TopHeightDiagonal(someArray);
+				
+			} else if(threadName.equalsIgnoreCase("BottomHeightDiagonal")) {
+			
+				return new BottomHeightDiagonal(someArray);
+				
+			} else {
+				
+				return null;
+				
 			}
 			
 			
 			
 			
 			
-			return null;
+			
 		}
 	
 }

@@ -11,7 +11,13 @@ public class MatrixFactoryLauncher {
 	
 	matrixFactory.createThread("PrimaryDiagonal").run();
 	
+	matrixFactory.createThread("BotttomWidthDiagonal").run();
 	
+	matrixFactory.createThread("TopWidthDiagonal").run();
+	
+	matrixFactory.createThread("BotttomHeightDiagonal").run();
+	
+	matrixFactory.createThread("TopHeightDiagonal").run();
 	
 	}
 }
