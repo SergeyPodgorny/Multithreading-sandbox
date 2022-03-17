@@ -1,67 +1,37 @@
-package com.multithreading.sandbox.thread.and.runnable.java1;
+package com.multithreading.sandbox.thread.and.runnable.java1.benchmark;
 
 import java.util.Arrays;
 
-public class InnerClass{
+public class AnonymousClass extends Thread{
 	
 	
 	private int matrixSize = 49;
 	private volatile int[][] someArray = new int[matrixSize*matrixSize][matrixSize*matrixSize];
 	
+	{
 	
-	public void createArray() {
-		
-		SparseMatrix thread1 = new SparseMatrix();
-		thread1.start();
+	new Thread() {
 		
 		
-		PrimaryDiagonal thread2 = new PrimaryDiagonal() ;
-		thread2.start();
-		
-		TopWidthDiagonal thread3 = new TopWidthDiagonal();
-		thread3.start();
-		
-		BotttomWidthDiagonal thread4 = new BotttomWidthDiagonal();
-		thread4.start();
-		
-		TopHeightDiagonal thread5 = new TopHeightDiagonal();
-		thread5.start();
-		
-		BottomHeightDiagonal thread6 = new BottomHeightDiagonal();
-		thread6.start();
-		
-		
-		
-		
-		
-				
-				
-				
-	}
-	
-	
-	
-	
-	
-	
-	private class SparseMatrix extends Thread {
-		
+		// creating sparse array
 		@Override
 		public void run() {
-		for (int i = 0; i < matrixSize*matrixSize; i++) {
+			for (int i = 0; i < matrixSize*matrixSize; i++) {
 				for (int j = 0; j < matrixSize*matrixSize; j++) {
 					if (i==j) {
-						someArray[i][j] = 1;
+						someArray[i][j] = 2;
 					}
 				}
 			}
-		}
-		
-		
 	}
-	
-	private class PrimaryDiagonal extends Thread{
 		
+	}.start();
+	
+	new Thread() {
+		
+		
+		
+		// primary diagonal
 		@Override
 		public void run() {
 			for (int i = matrixSize+1; i < matrixSize*matrixSize-matrixSize-1; i++) {
@@ -77,15 +47,14 @@ public class InnerClass{
 				}
 				
 			}
-			
-		}
-		
-		
 	}
-	
-	
-	private class TopWidthDiagonal extends Thread{
 		
+	}.start();
+	
+	
+	new Thread() {
+				
+		// TopWidthDiagonal
 		@Override
 		public void run() {
 			for (int i = matrixSize+1; i < matrixSize*matrixSize-matrixSize; i++) {
@@ -99,12 +68,15 @@ public class InnerClass{
 				}
 				
 			}
-		}
-		
-		
 	}
+		
+	}.start();
 	
-	private class BotttomWidthDiagonal extends Thread{
+	
+	//BotttomWidthDiagonal
+	
+	new Thread() {
+		
 		
 		@Override
 		public void run() {
@@ -119,12 +91,15 @@ public class InnerClass{
 				}
 				
 			}
-		}
-		
-		
 	}
+		
+	}.start();
 	
-	private class TopHeightDiagonal extends Thread{
+	
+	//TopHeightDiagonal
+	
+new Thread() {
+		
 		
 		@Override
 		public void run() {
@@ -144,11 +119,15 @@ public class InnerClass{
 			
 			
 		}
+	
 		
-	}
+	}.start();
 	
 	
-	private class BottomHeightDiagonal extends Thread{
+	
+	
+	//BottomHeightDiagonal
+	new Thread() {
 		
 		@Override
 		public void run() {
@@ -167,16 +146,18 @@ public class InnerClass{
 			
 			
 		}
-		
+
+	}.start();
+	
+	
+	
+	
 	}
 	
 	
-	
-	
-	public void printer () {
+	public void printer() {
 		System.out.println(Arrays.deepToString(someArray).replace("], ", "]\n"));
 	}
-	
 	
 	
 	

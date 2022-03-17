@@ -3,15 +3,22 @@ package com.multithreading.sandbox;
 import java.time.Duration;
 import java.time.Instant;
 
-import com.multithreading.sandbox.executorAPI.java7.RunnableTask;
-import com.multithreading.sandbox.thread.and.runnable.java1.AnonymousClass;
-import com.multithreading.sandbox.thread.and.runnable.java1.InnerClass;
-import com.multithreading.sandbox.thread.and.runnable.java1.RunnableWithLambda;
-import com.multithreading.sandbox.thread.and.runnable.java1.SingleThread;
+import com.multithreading.sandbox.executorAPI.java7.benchmark.RunnableTask;
+import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.AnonymousClass;
+import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.InnerClass;
+import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.RunnableWithLambda;
+import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.SingleThread;
 
 public class Sandbox {
 
+	// this is a global field for every class
+	public static final int MATRIX_SIZE = 49; 
+	
+	
 	public static void main(String[] args) throws InterruptedException {
+		
+		
+		
 		
 		
 		

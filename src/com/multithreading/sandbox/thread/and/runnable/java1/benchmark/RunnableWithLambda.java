@@ -1,4 +1,4 @@
-package com.multithreading.sandbox.thread.and.runnable.java1;
+package com.multithreading.sandbox.thread.and.runnable.java1.benchmark;
 
 public class RunnableWithLambda extends Thread{
 
