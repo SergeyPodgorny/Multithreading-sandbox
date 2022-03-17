@@ -7,8 +7,8 @@ import java.util.Arrays;
 public class AnonymousClass extends Thread{
 	
 	
-	private int matrixSize = 49;
-	private volatile int[][] someArray = new int[matrixSize*matrixSize][matrixSize*matrixSize];
+	
+	private volatile int[][] someArray = new int[MATRIX_SIZE*MATRIX_SIZE][MATRIX_SIZE*MATRIX_SIZE];
 	
 	{
 	

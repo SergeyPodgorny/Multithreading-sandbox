@@ -12,7 +12,7 @@ import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.SingleThre
 public class Sandbox {
 
 	// this is a global field for every class
-	public static final int MATRIX_SIZE = 4; 
+	public static final int MATRIX_SIZE = 49; 
 	
 	
 	public static void main(String[] args) throws InterruptedException {

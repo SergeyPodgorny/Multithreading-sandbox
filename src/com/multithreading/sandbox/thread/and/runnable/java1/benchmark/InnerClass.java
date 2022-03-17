@@ -7,8 +7,8 @@ import java.util.Arrays;
 public class InnerClass{
 	
 	
-	private int matrixSize = 49;
-	private volatile int[][] someArray = new int[matrixSize*matrixSize][matrixSize*matrixSize];
+	
+	private volatile int[][] someArray = new int[MATRIX_SIZE*MATRIX_SIZE][MATRIX_SIZE*MATRIX_SIZE];
 	
 	
 	public void createArray() {
@@ -163,6 +163,7 @@ public class InnerClass{
 	
 	
 	
+	@SuppressWarnings("unused")
 	public void printer () {
 		System.out.println(Arrays.deepToString(someArray).replace("], ", "]\n"));
 	}
