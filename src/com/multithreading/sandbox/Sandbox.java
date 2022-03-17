@@ -19,34 +19,17 @@ public class Sandbox {
 		
 		// Single thread
 		
-		singleThread();
+		singleThreadingTime();
 		
-				
+			
 		
 		// nested non static classes
 		
-		Instant startTime = Instant.now();
-		
-		InnerClass multiThreads = new InnerClass();
-		
-		multiThreads.createArray();
-						
-		Instant endTime = Instant.now();
-		
-		System.out.println("Execution time with nested non static classes" + " " + Duration.between(startTime, endTime).toMillis());
-		
+		nestedInnerClassesTime();
 		
 		// nested anonymous nested non static classes
 		
-		Instant startTime2 = Instant.now();
 		
-		AnonymousClass anonThreading = new AnonymousClass();
-		
-		anonThreading.start();
-		
-		Instant endTime2 = Instant.now();
-		
-		System.out.println("Execution time with nested anonymous non static classes" + " " + Duration.between(startTime2, endTime2).toMillis());
 		
 		
 		// inner non static classes built by runable interface with lambdas
@@ -78,7 +61,7 @@ public class Sandbox {
 		
 	}
 
-	private static void singleThread() {
+	private static void singleThreadingTime() {
 		
 		Instant startTime1 = Instant.now();
 		
@@ -91,6 +74,37 @@ public class Sandbox {
 		System.out.println("Execution time with single thread" + " " + Duration.between(startTime1, endTime1).toMillis());
 	}
 
+	
+	private static void nestedInnerClassesTime() {
+		
+		Instant startTime = Instant.now();
+		
+		InnerClass multiThreads = new InnerClass();
+		
+		multiThreads.createArray();
+						
+		Instant endTime = Instant.now();
+		
+		System.out.println("Execution time with nested non static classes" + " " + Duration.between(startTime, endTime).toMillis());
+	}
+	
+	
+	private static void anonInnerClassesTime() {
+		
+		Instant startTime2 = Instant.now();
+		
+		AnonymousClass anonThreading = new AnonymousClass();
+		
+		anonThreading.start();
+		
+		Instant endTime2 = Instant.now();
+		
+		System.out.println("Execution time with nested anonymous non static classes" + " " + Duration.between(startTime2, endTime2).toMillis());
+		
+	}
+	
+	
+	
 	
 	
 }
