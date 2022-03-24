@@ -10,19 +10,23 @@ public class ThreadSynchronization {
 	 * @throws InterruptedException 
 	 */
 	
+	
+	
+	
+	
 	public static void main(String[] args) throws InterruptedException {
 		
 		
 		
+		SomeData someData = new SomeData();
 		
-		NonSyncData data1 = new NonSyncData(5);
 		
 		
 		Runnable writer = () -> {
 			
 			for(int i = 0; i<5; i++) {
-				data1.setData(i);
-				System.out.println(Thread.currentThread().getName()+ " " +"value"+data1.getData());
+				someData.changeData();
+				System.out.println(Thread.currentThread().getName()+ " " +"value"+someData.getData());
 			}
 			
 		};
@@ -30,8 +34,8 @@ public class ThreadSynchronization {
 		Runnable writer1 = () -> {
 			
 			for(int i = 0; i<5; i++) {
-				data1.setData(i);
-				System.out.println(Thread.currentThread().getName()+ " " +"value"+data1.getData());
+				someData.changeData();
+				System.out.println(Thread.currentThread().getName()+ " " +"value"+someData.getData());
 			}
 			
 		};
@@ -43,7 +47,9 @@ public class ThreadSynchronization {
 		
 		writerThread.start();
 		writerThread1.start();
-		
+		writerThread.join();
+		writerThread1.join();
+
 		
 		
 		
