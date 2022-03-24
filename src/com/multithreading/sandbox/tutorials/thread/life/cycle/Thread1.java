@@ -27,11 +27,13 @@ public class Thread1 extends Thread {
 		
 		
 		Thread t1 = new Thread(r1);
+		Thread t2 = new Thread(r2);
+		
 		t1.start();
 		t1.join();
-		
-		Thread t2 = new Thread(r2);
 		t2.start();
+		
+		
 		
 		
 		Thread.sleep(50);
