@@ -7,9 +7,10 @@ public class ThreadSynchronization {
 	 * Здесь решается проблема синхронизации разных потоков, обращающихся к одному ресурсу
 	 * 
 	 * @param args
+	 * @throws InterruptedException 
 	 */
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		
 		
 		
@@ -21,7 +22,7 @@ public class ThreadSynchronization {
 			
 			for(int i = 0; i<5; i++) {
 				data1.setData(i);
-				System.out.println(Thread.currentThread().getName()+data1.getData());
+				System.out.println(Thread.currentThread().getName()+ " " +"value"+data1.getData());
 			}
 			
 		};
@@ -30,19 +31,24 @@ public class ThreadSynchronization {
 			
 			
 			for(int i = 0; i <5; i++) {
-				System.out.println(Thread.currentThread().getName()+data1.getData());
+				System.out.println(Thread.currentThread().getName()+ " " +"value"+data1.getData());
 			}
 			
 		};
 		
-		
+		System.out.println("Non synchronized data writing/reading");
 		Thread writerThread = new Thread(writer);
 		
 		Thread readerThread = new Thread(reader);
 		
 		writerThread.start();
+		writerThread.join();
 		
 		readerThread.start();
+		readerThread.join();
+		
+
+		
 		
 	}
 	
