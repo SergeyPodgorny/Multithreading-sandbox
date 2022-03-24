@@ -156,7 +156,7 @@ public class Sandbox {
 		
 		Instant endTime4 = Instant.now();
 		
-		System.out.println("Execution time with executor API" + " " + Duration.between(startTime4, endTime4).toMillis());		
+		System.out.println("Execution time with Executors" + " " + Duration.between(startTime4, endTime4).toMillis());		
 		
 	}
 	
