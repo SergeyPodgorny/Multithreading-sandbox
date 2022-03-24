@@ -26,7 +26,7 @@ public class ThreadSynchronization {
 			
 			for(int i = 0; i<5; i++) {
 				someData.changeData();
-				System.out.println(Thread.currentThread().getName()+ " " +"value"+someData.getData());
+//				System.out.println(Thread.currentThread().getName()+ " " +"value"+someData.getData());
 			}
 			
 		};
@@ -35,7 +35,7 @@ public class ThreadSynchronization {
 			
 			for(int i = 0; i<5; i++) {
 				someData.changeData();
-				System.out.println(Thread.currentThread().getName()+ " " +"value"+someData.getData());
+//				System.out.println(Thread.currentThread().getName()+ " " +"value"+someData.getData());
 			}
 			
 		};
@@ -44,11 +44,14 @@ public class ThreadSynchronization {
 		Thread writerThread = new Thread(writer);
 		Thread writerThread1 = new Thread(writer1);
 		
-		
+		writerThread.setName("one");
 		writerThread.start();
-		writerThread1.start();
 		writerThread.join();
+		writerThread1.start();
 		writerThread1.join();
+		
+		
+		System.out.println(someData.getData());
 
 		
 		
