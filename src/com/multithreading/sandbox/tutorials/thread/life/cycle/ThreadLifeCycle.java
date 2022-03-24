@@ -1,6 +1,6 @@
 package com.multithreading.sandbox.tutorials.thread.life.cycle;
 
-public class Thread1 extends Thread {
+public class ThreadLifeCycle extends Thread {
 	
 	
 	/**
