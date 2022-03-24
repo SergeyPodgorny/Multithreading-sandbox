@@ -27,10 +27,10 @@ public class ThreadSynchronization {
 			
 		};
 		
-		Runnable reader = () -> {
+		Runnable writer1 = () -> {
 			
-			
-			for(int i = 0; i <5; i++) {
+			for(int i = 0; i<5; i++) {
+				data1.setData(i);
 				System.out.println(Thread.currentThread().getName()+ " " +"value"+data1.getData());
 			}
 			
@@ -38,14 +38,14 @@ public class ThreadSynchronization {
 		
 		System.out.println("Non synchronized data writing/reading");
 		Thread writerThread = new Thread(writer);
+		Thread writerThread1 = new Thread(writer1);
 		
-		Thread readerThread = new Thread(reader);
 		
 		writerThread.start();
-		writerThread.join();
+		writerThread1.start();
 		
-		readerThread.start();
-		readerThread.join();
+		
+		
 		
 
 		

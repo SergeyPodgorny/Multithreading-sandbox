@@ -9,11 +9,11 @@ public class NonSyncData {
 		this.data = data;
 	}
 
-	public synchronized int getData() {
+	public int getData() {
 		return data;
 	}
 
-	public synchronized void setData(int data) {
+	public void setData(int data) {
 		this.data = data;
 	}
 	
