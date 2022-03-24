@@ -27,15 +27,14 @@ public class Thread1 extends Thread {
 		
 		
 		Thread t1 = new Thread(r1);
-		t1.setPriority(MIN_PRIORITY);
 		t1.start();
+		t1.join();
 		
 		Thread t2 = new Thread(r2);
-		t2.setPriority(MAX_PRIORITY);
 		t2.start();
 		
 		
-		Thread.sleep(1000);
+		Thread.sleep(50);
 		System.out.println("Thread main");
 		
 	
