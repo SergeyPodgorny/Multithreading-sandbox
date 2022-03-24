@@ -11,7 +11,7 @@ public class Thread1 extends Thread {
 	 * @throws InterruptedException
 	 */
 	
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		
 		
 		
@@ -24,10 +24,10 @@ public class Thread1 extends Thread {
 		Thread t1 = new Thread(r1);
 		t1.start();
 		
-		Thread.sleep(1000);
 		
+		Thread.yield();
 		System.out.println("Thread main");
-	
+		
 	
 	}
 	
