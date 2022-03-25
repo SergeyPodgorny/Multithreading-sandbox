@@ -2,6 +2,8 @@ package com.multithreading.sandbox;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 import com.multithreading.sandbox.executorAPI.java7.benchmark.RunnableTask;
 import com.multithreading.sandbox.thread.and.runnable.abstractFactory.MatrixFactoryLauncher;
@@ -14,7 +16,11 @@ import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.SingleThre
 public class Sandbox {
 
 	// this is a global field for every class
-	public static final int MATRIX_SIZE = 49; 
+	
+	
+	public static final int MATRIX_SIZE = 13; 
+	
+	public static final Executor taskLauncher = Executors.newWorkStealingPool();
 	
 	
 	public static void main(String[] args) throws InterruptedException {
