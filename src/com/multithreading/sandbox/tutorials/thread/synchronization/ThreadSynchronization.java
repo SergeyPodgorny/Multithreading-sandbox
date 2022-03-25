@@ -11,53 +11,24 @@ public class ThreadSynchronization {
 	 */
 	
 	
-	
-	
-	
 	public static void main(String[] args) throws InterruptedException {
 		
 		
 		
-		SomeData someData = new SomeData();
+		SomeData someTask = new SomeData();
+		
+		
+		ThreadLauncher thread = new ThreadLauncher(someTask);
+		
+		ThreadLauncher thread1 = new ThreadLauncher(someTask);
+		
+		thread1.start();
+		thread1.join();
+		thread.start();
 		
 		
 		
-		Runnable writer = () -> {
 			
-			for(int i = 0; i<5; i++) {
-				someData.changeData();
-//				System.out.println(Thread.currentThread().getName()+ " " +"value"+someData.getData());
-			}
-			
-		};
-		
-		Runnable writer1 = () -> {
-			
-			for(int i = 0; i<5; i++) {
-				someData.changeData();
-//				System.out.println(Thread.currentThread().getName()+ " " +"value"+someData.getData());
-			}
-			
-		};
-		
-		System.out.println("Non synchronized data writing/reading");
-		Thread writerThread = new Thread(writer);
-		Thread writerThread1 = new Thread(writer1);
-		
-		writerThread.setName("one");
-		writerThread.start();
-		writerThread.join();
-		writerThread1.start();
-		writerThread1.join();
-		
-		
-		System.out.println(someData.getData());
-
-		
-		
-		
-
-		
 		
 	}
 	

@@ -1,36 +1,26 @@
 package com.multithreading.sandbox.tutorials.thread.synchronization;
 
 public class SomeData {
+
 	
-	public int data;
 	
-	public void changeData() {
-		int data = this.data;
+	
+	public void runner() {
+		System.out.println(Thread.currentThread().getName()+" prints a");
 		
-		if(Thread.currentThread().getName().equals("one")) {
-			try {
-				Thread.sleep(50);
-			} catch (InterruptedException e){
-				e.printStackTrace();
-				
-			}
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
 			
+			e.printStackTrace();
 		}
-			
-		 	
-		 data++;
-		 this.data = data;
+		
+		System.out.println(Thread.currentThread().getName()+" prints b");
 		
 	}
-
-	public int getData() {
-		return data;
-	}
-
-	public void setData(int data) {
-		this.data = data;
-	}
-
+	
+	
+	
 	
 	
 	
