@@ -18,7 +18,7 @@ public class RunnableTask {
 	
 	{
 		
-	Executor taskLauncher = Executors.newFixedThreadPool(2);	
+	Executor taskLauncher = Executors.newWorkStealingPool();	
 		
 	
 	Runnable mainTask = () -> {
