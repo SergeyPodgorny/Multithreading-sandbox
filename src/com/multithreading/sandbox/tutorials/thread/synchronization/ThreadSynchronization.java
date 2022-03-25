@@ -22,9 +22,9 @@ public class ThreadSynchronization {
 		
 		ThreadLauncher thread1 = new ThreadLauncher(someTask);
 		
-		thread1.start();
-		thread1.join();
 		thread.start();
+//		thread1.join();
+		thread1.start();
 		
 		
 		

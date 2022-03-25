@@ -5,7 +5,7 @@ public class SomeData {
 	
 	
 	
-	public void runner() {
+	public synchronized void runner() {
 		System.out.println(Thread.currentThread().getName()+" prints a");
 		
 		try {
