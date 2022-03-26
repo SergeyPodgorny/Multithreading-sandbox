@@ -1,4 +1,4 @@
-package com.multithreading.sandbox.thread.and.runnable.abstractFactory;
+package com.multithreading.sandbox.thread.and.runnable.FactoryMethod;
 
 public class MatrixFactoryLauncher {
 	

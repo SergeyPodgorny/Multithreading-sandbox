@@ -6,7 +6,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 import com.multithreading.sandbox.executorAPI.java7.benchmark.RunnableTask;
-import com.multithreading.sandbox.thread.and.runnable.abstractFactory.MatrixFactoryLauncher;
+import com.multithreading.sandbox.thread.and.runnable.FactoryMethod.MatrixFactoryLauncher;
 import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.AnonymousClass;
 import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.NestedClasses;
 import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.NestedStaticClasses;
@@ -53,7 +53,7 @@ public class Sandbox {
 		
 		runnableWithLambdas();
 		
-		// running the task with factory pattern
+		// running the task with factory method pattern
 		
 		factoryThreading();
 		
