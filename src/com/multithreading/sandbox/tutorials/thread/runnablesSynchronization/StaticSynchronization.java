@@ -1,4 +1,4 @@
-package com.multithreading.sandbox.tutorials.thread.staticSynchronization;
+package com.multithreading.sandbox.tutorials.thread.runnablesSynchronization;
 
 public class StaticSynchronization {
 	
