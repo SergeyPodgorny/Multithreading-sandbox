@@ -10,14 +10,18 @@ public class StaticSynchronization {
 	
 	public static void main(String[] args) {
 		
-		Runnable r1 = ()-> {
-			System.out.println("{");
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+		Runnable r1 = () -> {
+			synchronized (StaticSynchronization.class) {
+				System.out.println("{");
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				System.out.println("}");
 			}
-			System.out.println("}");
+			
+			
 		};
 		
 		Thread t1 = new Thread(r1);
@@ -27,7 +31,7 @@ public class StaticSynchronization {
 		
 		t1.start();
 		
-		
+		t2.start();
 		
 		
 		
