@@ -25,12 +25,7 @@ public class Sandbox {
 	
 	
 	public static void main(String[] args) throws InterruptedException {
-		
-		
-		
-		
-		
-		
+				
 		// Single thread
 		
 		singleThreadingTime();
@@ -59,7 +54,7 @@ public class Sandbox {
 		
 		// launching runnable task with Executros class
 		
-		method1();
+		executorThreading();
 		
 		
 		// 
@@ -155,11 +150,11 @@ public class Sandbox {
 	//TODO refactor this later
 	
 	
-	private static void method1() {
+	private static void executorThreading() {
 		
 		Instant startTime4 = Instant.now();
 		
-		RunnableTask task4 = new RunnableTask();
+		RunnableTask runnableTask = new RunnableTask();
 		
 		Instant endTime4 = Instant.now();
 		
