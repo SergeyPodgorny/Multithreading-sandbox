@@ -1,9 +1,9 @@
-package com.multithreading.sandbox.tutorials.thread.runnablesSynchronization;
+package com.multithreading.sandbox.tutorials.thread.synchronization.staticLambda;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-public class ExecutorStaticSynchro {
+public class StaticLambdaSynchronizationWithExecutors {
 	
 	
 		
@@ -15,7 +15,7 @@ public class ExecutorStaticSynchro {
 		
 		Runnable r1 = () ->{
 			
-			synchronized (ExecutorStaticSynchro.class){
+			synchronized (StaticLambdaSynchronizationWithExecutors.class){
 				System.out.println("{");
 				try {
 					Thread.sleep(100);
