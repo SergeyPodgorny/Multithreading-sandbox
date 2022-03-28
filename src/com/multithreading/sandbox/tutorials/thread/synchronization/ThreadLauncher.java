@@ -39,16 +39,28 @@ public class ThreadLauncher {
 		
 		// синхронизация нестатичного метода, который содердит блок кода
 		
-			NonStaticMethodWithBlock nonStaticMethodWithBlock = new NonStaticMethodWithBlock(); 
-			
-			
-			Thread t1 = new Thread(nonStaticMethodWithBlock);
-			
-			Thread t2 = new Thread(nonStaticMethodWithBlock);
-			
-			t1.start();
-			
-			t2.start();
+//			NonStaticMethodWithBlock nonStaticMethodWithBlock = new NonStaticMethodWithBlock(); 
+//			
+//			
+//			Thread t1 = new Thread(nonStaticMethodWithBlock);
+//			
+//			Thread t2 = new Thread(nonStaticMethodWithBlock);
+//			
+//			t1.start();
+//			
+//			t2.start();
+		
+		
+		StaticMethodWithBlock staticMethodWithBlock = new StaticMethodWithBlock();
+		
+		Thread t1 = new Thread(staticMethodWithBlock);
+		
+		Thread t2 = new Thread(staticMethodWithBlock);
+		
+		t1.start();
+		
+		t2.start();
+		
 		
 		
 		
