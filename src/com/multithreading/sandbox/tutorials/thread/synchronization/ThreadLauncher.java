@@ -10,15 +10,32 @@ public class ThreadLauncher {
 	public static void main(String[] args) {
 		
 		
-		NonStaticMethodSync method1 = new NonStaticMethodSync();
+		// синхронизация не статичного метода
 		
-		Thread t1 = new Thread(method1);
+//		NonStaticMethodSync nonStaticMethod = new NonStaticMethodSync();
+//		
+//		Thread t1 = new Thread(nonStaticMethod);
+//		
+//		Thread t2 = new Thread(nonStaticMethod);
+//		
+//		t1.start();
+//				
+//		t2.start();
 		
-		Thread t2 = new Thread(method1);
+		
+		// синхронизация статичного метода
+	
+		StaticMethodSync staticMethod = new StaticMethodSync();
+		
+		
+		Thread t1 = new Thread(staticMethod);
+		
+		Thread t2 = new Thread(staticMethod);
 		
 		t1.start();
-				
+		
 		t2.start();
+		
 		
 	}
 	
