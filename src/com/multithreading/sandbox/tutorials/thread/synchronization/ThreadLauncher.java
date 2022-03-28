@@ -10,7 +10,7 @@ public class ThreadLauncher {
 	public static void main(String[] args) {
 		
 		
-		// синхронизация не статичного метода
+		// синхронизация нестатичного метода
 		
 //		NonStaticMethodSync nonStaticMethod = new NonStaticMethodSync();
 //		
@@ -25,16 +25,31 @@ public class ThreadLauncher {
 		
 		// синхронизация статичного метода
 	
-		StaticMethodSync staticMethod = new StaticMethodSync();
+//		StaticMethodSync staticMethod = new StaticMethodSync();
+//		
+//		
+//		Thread t1 = new Thread(staticMethod);
+//		
+//		Thread t2 = new Thread(staticMethod);
+//		
+//		t1.start();
+//		
+//		t2.start();
 		
 		
-		Thread t1 = new Thread(staticMethod);
+		// синхронизация нестатичного метода, который содердит блок кода
 		
-		Thread t2 = new Thread(staticMethod);
+			NonStaticMethodWithBlock nonStaticMethodWithBlock = new NonStaticMethodWithBlock(); 
+			
+			
+			Thread t1 = new Thread(nonStaticMethodWithBlock);
+			
+			Thread t2 = new Thread(nonStaticMethodWithBlock);
+			
+			t1.start();
+			
+			t2.start();
 		
-		t1.start();
-		
-		t2.start();
 		
 		
 	}
