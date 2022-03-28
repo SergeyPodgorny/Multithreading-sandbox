@@ -1,5 +1,7 @@
 package com.multithreading.sandbox.tutorials.thread.synchronization.staticLambda;
 
+
+
 public class StaticLambdaSynchronization {
 	
 	
