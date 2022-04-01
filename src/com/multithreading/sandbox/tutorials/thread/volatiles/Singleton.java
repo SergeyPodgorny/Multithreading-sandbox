@@ -2,7 +2,7 @@ package com.multithreading.sandbox.tutorials.thread.volatiles;
 
 public class Singleton {
 	
-	private static Singleton INSTANCE;
+	private volatile static Singleton INSTANCE = null;
 
 	private Singleton() {
 		System.out.println("Singleton created");
@@ -13,7 +13,8 @@ public class Singleton {
 	public static Singleton getInstance() {
 		
 		if (INSTANCE == null) {
-			return new Singleton();
+			INSTANCE = new Singleton();
+			return INSTANCE;
 		} else {
 			throw new RuntimeException();
 		}
