@@ -3,30 +3,35 @@ package com.multithreading.sandbox.tutorials.thread.volatiles;
 public class VolatileExamleLauncher {
 	
 	
-	static  int i;
 	
 	
 	
-	public static void main (String[] args) {
+	
+	public static void main (String[] args) throws InterruptedException {
 		
 		
 		Runnable r1 = () -> {
 			
 			Singleton.getInstance();
-		
+			
+			
+			
 		};
 		
 		
-		new Thread(r1) {
-			
-		}.start();
 		
-		new Thread(r1) {
-			
-		}.start();
+		Thread t1 = new Thread(r1);
+		Thread t2 = new Thread(r1);
+		
+		t1.start();
 		
 		
+		t2.start();
 		
+		
+		
+//		Singleton.getInstance();
+//		Singleton.getInstance();
 	}
 	
 	
