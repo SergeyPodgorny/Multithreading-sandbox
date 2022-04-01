@@ -3,7 +3,7 @@ package com.multithreading.sandbox.tutorials.thread.volatiles;
 public class VolatileTutorial {
 	
 	
-	static volatile int target;
+	static char target;
 	
 	static int maxIter = 5;
 	
@@ -14,34 +14,46 @@ public class VolatileTutorial {
 		
 		{
 		
-		Runnable writer = ()->{
+		Runnable writer1 = ()->{
 			
-			while(maxIter < 5) {
-				target++;
-			}
+			target= '{';
+			System.out.println(target);
+			
+			
+			
+		};
+		
+		Runnable writer2 = ()->{
+			
+			target = '}';
+			System.out.println(target);
 			
 			
 		};
 		
-		Runnable printer = () -> {
-			
-			while (target > 1) {
-			
-				System.out.println(target);
-				
-			}
-			
-		};
+		
+//		Runnable printer = () -> {
+//			
+//			System.out.println(target);
+//			
+//		};
 		
 		
-		new Thread(writer) {
+		
+		
+		
+		new Thread(writer1) {
+			
+		}.start();
+		
+		new Thread(writer2) {
 			
 		}.start();
 		
 		
-		new Thread (printer) {
-			
-		}.start();
+//		new Thread (printer) {
+//			
+//		}.start();
 		
 		
 		}
