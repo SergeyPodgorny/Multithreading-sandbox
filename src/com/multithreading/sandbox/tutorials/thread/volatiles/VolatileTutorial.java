@@ -17,21 +17,18 @@ public class VolatileTutorial {
 		Runnable writer = ()->{
 			
 			target= '{';
-			System.out.println(target);
+//			System.out.println(target);
 			
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			
 			
 			target= '}';
-			System.out.println(target);
+//			System.out.println(target+ " from " + Thread.currentThread().getName());
 			
 						
 		};
 		
 		
+		
 		new Thread(writer) {
 			
 		}.start();
@@ -39,8 +36,12 @@ public class VolatileTutorial {
 		new Thread(writer) {
 			
 		}.start();
+		
 		
 		
 		}
+		
+		
+		
 	}
 }
