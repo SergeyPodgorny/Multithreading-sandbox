@@ -14,8 +14,6 @@ public class VolatileExamleLauncher {
 			
 			Singleton.getInstance();
 			
-			
-			
 		};
 		
 		
@@ -24,7 +22,6 @@ public class VolatileExamleLauncher {
 		Thread t2 = new Thread(r1);
 		
 		t1.start();
-		
 		
 		t2.start();
 		

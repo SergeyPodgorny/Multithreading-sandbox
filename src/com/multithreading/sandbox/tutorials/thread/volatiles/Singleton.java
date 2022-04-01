@@ -13,10 +13,15 @@ public class Singleton {
 	public static Singleton getInstance() {
 		
 		if (INSTANCE == null) {
-			new Singleton();
-			} else {
-			throw new RuntimeException();
-		}
+			synchronized (Singleton.class) {
+				if(INSTANCE == null) {
+					INSTANCE = new Singleton();
+				} else {
+					throw new RuntimeException();
+				}
+			}
+			 			
+			} 
 		
 		return INSTANCE;
 	}
