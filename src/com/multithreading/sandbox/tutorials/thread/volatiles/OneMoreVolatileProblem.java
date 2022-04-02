@@ -30,8 +30,12 @@ public class OneMoreVolatileProblem {
 		isReady = true;
 		number = 42;
 		
+		System.out.println(getNumber());
 		
 	}
 	
-
+	public static int getNumber() {
+		return number;
+	}
+	
 }
