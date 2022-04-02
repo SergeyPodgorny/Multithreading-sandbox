@@ -7,13 +7,13 @@ import org.junit.jupiter.api.Test;
 public class OneMoreVolatileProblemTest {
 	
 	
-	
+	OneMoreVolatileProblem problem = new OneMoreVolatileProblem();
 	
 	
 	@Test
 	void answerShouldBeFourtyTwo() {
 		
-		assertEquals(42,OneMoreVolatileProblem.getNumber());
+		assertEquals(42,problem.getNumber());
 		
 		
 	}
