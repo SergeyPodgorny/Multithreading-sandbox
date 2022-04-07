@@ -1,4 +1,4 @@
-package com.multithreading.sandbox.tutorials.thread.volatiles;
+package com.multithreading.sandbox.tutorials.thread.volatiletutorial;
 
 public class OneMoreVolatileProblem {
 	
