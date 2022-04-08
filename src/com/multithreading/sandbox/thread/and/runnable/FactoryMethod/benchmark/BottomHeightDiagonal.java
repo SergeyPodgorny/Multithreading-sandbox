@@ -1,4 +1,4 @@
-package com.multithreading.sandbox.thread.and.runnable.FactoryMethod;
+package com.multithreading.sandbox.thread.and.runnable.FactoryMethod.benchmark;
 
 import static com.multithreading.sandbox.Sandbox.MATRIX_SIZE;
 
