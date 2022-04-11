@@ -1,31 +1,21 @@
 package com.multithreading.sandbox.tutorials.thread.deadlockProblem;
 
-public class DangerousClass1 implements Runnable{
+public class DangerousClass1{
 	
 	
-	@Override
-	public void run() {
-		
-		printer1();
-		printer2();
-		
+	DangerousClass2 dangerousclass2;
+	
+	
+	
+	
+	public synchronized int getI() {
+		return dangerousclass2.getI();
 	}
 	
 	
-	
-	public synchronized static void printer1() {
-		
-		System.out.println("{");
-		
+	private synchronized int returnN() {
+		return 2;
 	}
-	
-	
-	public synchronized static void printer2() {
-		
-		System.out.println("}");
-		
-	}
-	
 	
 
 }
