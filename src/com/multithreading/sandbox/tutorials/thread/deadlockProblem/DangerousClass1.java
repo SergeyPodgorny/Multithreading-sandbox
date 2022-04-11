@@ -1,6 +1,6 @@
 package com.multithreading.sandbox.tutorials.thread.deadlockProblem;
 
-public class DangerousClass implements Runnable{
+public class DangerousClass1 implements Runnable{
 	
 	
 	@Override
@@ -13,14 +13,14 @@ public class DangerousClass implements Runnable{
 	
 	
 	
-	public static void printer1() {
+	public synchronized static void printer1() {
 		
 		System.out.println("{");
 		
 	}
 	
 	
-	public static void printer2() {
+	public synchronized static void printer2() {
 		
 		System.out.println("}");
 		
