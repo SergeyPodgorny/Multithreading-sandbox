@@ -1,18 +1,24 @@
 package com.multithreading.sandbox.tutorials.thread.deadlockProblem;
 
-public class DangerousClass2 {
+public class DangerousClass2 extends Thread {
 
 	
-	DangerousClass1 dangerouscClass1;
+	DangerousClass1 dangerouscClass1 =new DangerousClass1();
 	
-	
-	public synchronized int getI() {
-		return dangerouscClass1.getI();
+	@Override
+	public void run() {
+		getI();
 	}
 	
 	
-	private synchronized int returnN() {
-		return 1;
+	
+	public synchronized void getI() {
+		dangerouscClass1.getI();
+	}
+	
+	
+	private synchronized void returnN() {
+		System.out.println("1");
 	}
 	
 	

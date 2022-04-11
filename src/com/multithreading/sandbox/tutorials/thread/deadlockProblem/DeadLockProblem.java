@@ -6,17 +6,13 @@ public class DeadLockProblem {
 		
 		
 		
-		Runnable r1 = () -> {
-			DangerousClass1 class1 = new DangerousClass1(); 
-		};
+		DangerousClass1 t1 = new DangerousClass1();
 		
-		Runnable r2 = () -> {
-			DangerousClass2 class1 = new DangerousClass2(); 
-		};
+		DangerousClass2 t2 = new DangerousClass2();
 		
-		new Thread(r1).start();
 		
-		new Thread(r2).start();
+		
+		
 		
 		
 		
