@@ -10,6 +10,9 @@ public class DeadLockProblem {
 		
 		DangerousClass2 t2 = new DangerousClass2();
 		
+		
+		
+		
 		t1.start();
 		
 		t2.start();

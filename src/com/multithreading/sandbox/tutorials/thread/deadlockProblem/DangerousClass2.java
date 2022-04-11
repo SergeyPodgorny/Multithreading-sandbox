@@ -3,7 +3,7 @@ package com.multithreading.sandbox.tutorials.thread.deadlockProblem;
 public class DangerousClass2 extends Thread {
 
 	
-	DangerousClass1 dangerouscClass1;
+	DangerousClass1 dangerouscClass1 = new DangerousClass1();
 	
 	@Override
 	public void run() {
