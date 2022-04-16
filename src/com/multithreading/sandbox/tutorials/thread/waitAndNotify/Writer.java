@@ -8,20 +8,13 @@ import static com.multithreading.sandbox.tutorials.thread.waitAndNotify.WaitAndN
 
 public class Writer extends Thread{
 
-	
-	{
+	@Override
+	public void run() {
+		
 		list.stream().forEach(System.out::println);
 		
-		try {
-			list.wait();
-		} catch (InterruptedException e){
-			e.printStackTrace();;
-		}
-		
-		
-		
+
 	}
-	
 	
 	
 }

@@ -9,13 +9,17 @@ import java.util.Scanner;
 public class Reader extends Thread{
 	
 	
-	Scanner scaner = new Scanner(System.in);
 	
 	
-	{
+	
+	@Override
+	public void run() {
+		
+		Scanner scaner = new Scanner(System.in);
+		
 		list.add(scaner.next());
 		
-		list.notify();
+//		list.notify();
 	}
 	
 	
