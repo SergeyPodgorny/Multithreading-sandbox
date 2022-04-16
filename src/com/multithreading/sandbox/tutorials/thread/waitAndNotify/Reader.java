@@ -14,6 +14,8 @@ public class Reader extends Thread{
 	
 	{
 		list.add(scaner.next());
+		
+		list.notify();
 	}
 	
 	
