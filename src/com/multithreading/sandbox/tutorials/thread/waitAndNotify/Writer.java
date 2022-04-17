@@ -14,10 +14,11 @@ public class Writer extends Thread{
 		while(list.isEmpty()) {
 			
 			synchronized(list) {
+								
+//				list.stream().forEach(System.out::println);
+					
 				
-				list.stream().forEach(System.out::println);
 				
-				list.remove(0);
 				
 				try {
 					list.wait();
@@ -25,6 +26,9 @@ public class Writer extends Thread{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				
+				System.out.println(list.remove(0));
+			
 			}
 			
 		}

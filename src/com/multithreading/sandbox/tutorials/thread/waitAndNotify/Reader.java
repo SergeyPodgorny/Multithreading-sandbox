@@ -15,14 +15,28 @@ public class Reader extends Thread{
 	@Override
 	public void run() {
 		
+		
+		Scanner scaner = new Scanner(System.in);
+		
+		
 		while(true) {
 			
 			synchronized (list){
-				Scanner scaner = new Scanner(System.in);
 				
-				list.add(scaner.next());
+				
+				list.add(scaner.nextLine());
+				
 				
 				list.notify();
+				
+				
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 			}
 		}
 		

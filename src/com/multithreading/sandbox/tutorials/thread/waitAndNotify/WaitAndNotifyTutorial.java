@@ -6,15 +6,17 @@ import java.util.List;
 public class WaitAndNotifyTutorial {
 	
 	
-	public static List<String> list = new ArrayList<>();
+	public static List<Object> list = new ArrayList<>();
 	
 	
 	
 	public static void main (String[] args) {
 		
-		new Reader().start();;
-		
 		new Writer().start();
+		
+		new Reader().start();
+		
+		
 		
 		
 		
