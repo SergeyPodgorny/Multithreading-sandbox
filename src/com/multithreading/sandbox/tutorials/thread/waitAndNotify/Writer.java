@@ -16,8 +16,6 @@ public class Writer extends Thread{
 			synchronized(list) {
 								
 //				list.stream().forEach(System.out::println);
-					
-				
 				
 				
 				try {
@@ -33,7 +31,7 @@ public class Writer extends Thread{
 			
 		}
 		
-
+		
 	}
 	
 	

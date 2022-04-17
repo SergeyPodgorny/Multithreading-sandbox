@@ -1,12 +1,13 @@
 package com.multithreading.sandbox.tutorials.thread.waitAndNotify;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class WaitAndNotifyTutorial {
 	
 	
-	public static List<Object> list = new ArrayList<>();
+	public static List<Object> list = Collections.synchronizedList( new ArrayList<>());
 	
 	
 	
