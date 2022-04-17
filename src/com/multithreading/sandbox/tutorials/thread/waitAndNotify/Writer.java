@@ -11,7 +11,23 @@ public class Writer extends Thread{
 	@Override
 	public void run() {
 		
-		list.stream().forEach(System.out::println);
+		while(list.isEmpty()) {
+			
+			synchronized(list) {
+				
+				list.stream().forEach(System.out::println);
+				
+				list.remove(0);
+				
+				try {
+					list.wait();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+		}
 		
 
 	}

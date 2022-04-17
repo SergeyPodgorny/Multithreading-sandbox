@@ -15,11 +15,23 @@ public class Reader extends Thread{
 	@Override
 	public void run() {
 		
-		Scanner scaner = new Scanner(System.in);
+		while(true) {
+			
+			synchronized (list){
+				Scanner scaner = new Scanner(System.in);
+				
+				list.add(scaner.next());
+				
+				list.notify();
+			}
+		}
 		
-		list.add(scaner.next());
 		
-//		list.notify();
+		
+		
+		
+		
+
 	}
 	
 	
