@@ -25,8 +25,8 @@ public class Writer extends Thread{
 					e.printStackTrace();
 				}
 				
+				System.out.println(Thread.currentThread().getName());
 				System.out.println(list.remove(0));
-			
 			}
 			
 		}

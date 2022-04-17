@@ -13,9 +13,11 @@ public class WaitAndNotifyTutorial {
 	
 	public static void main (String[] args) {
 		
+		new Reader().start();
+		
 		new Writer().start();
 		
-		new Reader().start();
+		
 		
 		
 		

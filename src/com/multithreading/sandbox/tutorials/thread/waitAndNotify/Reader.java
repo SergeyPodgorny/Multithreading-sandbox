@@ -26,17 +26,11 @@ public class Reader extends Thread{
 				
 				list.add(scaner.nextLine());
 				
-				
+				System.out.println(Thread.currentThread().getName());
 				list.notify();
 				
 				
-				try {
-					Thread.sleep(500);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
+	
 			}
 		}
 		
