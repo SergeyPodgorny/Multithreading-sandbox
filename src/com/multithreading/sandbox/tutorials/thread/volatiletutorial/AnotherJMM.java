@@ -1,6 +1,6 @@
 package com.multithreading.sandbox.tutorials.thread.volatiletutorial;
 
-import static org.junit.jupiter.api.DynamicTest.stream;
+
 
 public class AnotherJMM {
 	
