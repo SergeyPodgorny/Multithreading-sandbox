@@ -5,13 +5,13 @@ import java.time.Instant;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-import com.multithreading.sandbox.executorAPI.java7.benchmark.RunnableTask;
-import com.multithreading.sandbox.thread.and.runnable.FactoryMethod.benchmark.MatrixFactoryLauncher;
-import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.AnonymousClass;
-import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.NestedClasses;
-import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.NestedStaticClasses;
-import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.RunnableWithLambda;
-import com.multithreading.sandbox.thread.and.runnable.java1.benchmark.SingleThread;
+import com.multithreading.sandbox.benchmarks.benchmark.RunnableTask;
+import com.multithreading.sandbox.benchmarks.runnable.FactoryMethod.benchmark.MatrixFactoryLauncher;
+import com.multithreading.sandbox.benchmarks.runnable.java1.benchmark.AnonymousClass;
+import com.multithreading.sandbox.benchmarks.runnable.java1.benchmark.NestedClasses;
+import com.multithreading.sandbox.benchmarks.runnable.java1.benchmark.NestedStaticClasses;
+import com.multithreading.sandbox.benchmarks.runnable.java1.benchmark.RunnableWithLambda;
+import com.multithreading.sandbox.benchmarks.runnable.java1.benchmark.SingleThread;
 
 public class Sandbox {
 
