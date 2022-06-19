@@ -1,5 +1,5 @@
 # Multithreading-sandbox
-Stack: Java 8, Eclipse IDE, Intelij Idea, Git, Lambda expressions, Concurency: java.util.concurent (Thread, Runnable, Callable), Executors, Fork/Join Framework, Maven
+Stack: Java 8, Eclipse IDE, Intelij Idea, Git, Collections framework, Lambda API, Concurency: java.util.concurent (Thread, Runnable, Callable), Executors, Fork/Join Framework, Maven
 
   Это репозиторий предназначен для двух вещей:
   1. Здесь я тестирую различные подходы по организации многопоточности для обеспечения как можно более быстрого заполнения матрицы коэффициентов             для решения дифференциальнго уравнения сохранения энергии, которое является ядром собственно разработанного алгоритма мгновенного расчета             температурного поля в активной зоне ядерного реактора типа PWR, входящего в состав приложения (в данном случае речь идет о двумерном массиве, в котором около 5,7 млн элементов).
