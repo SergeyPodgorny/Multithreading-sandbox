@@ -1,8 +1,33 @@
 # Multithreading-sandbox
-Stack: Java 8, Eclipse IDE, Intelij Idea, Git, Collections framework, Lambda API, Concurency: java.util.concurent (Thread, Runnable, Callable), Executors, Fork/Join Framework, Maven
+Stack: Java 8, Eclipse IDE, IntelliJ Idea, Git, Collections framework, Lambda API, Concurrency, Maven, Gradle
 
-  Это репозиторий предназначен для двух вещей:
-  1. Здесь я тестирую различные подходы по организации многопоточности для обеспечения как можно более быстрого заполнения матрицы коэффициентов             для решения дифференциальнго уравнения сохранения энергии, которое является ядром собственно разработанного алгоритма мгновенного расчета             температурного поля в активной зоне ядерного реактора типа PWR, входящего в состав приложения (в данном случае речь идет о двумерном массиве, в котором около 5,7 млн элементов).
-  2. Изучаю всё, что связано с многопточным программированием в Java.
+  This repository is devoted to two things:
+1. Firstly I am testing different approaches on how to set up architecture of my self designed 
+algorithm of instantaneous nuclear reactor active core state analyze.
+2. Learning Java multithreading, such as:
+>Creating thread with Thread class;
+> 
+> Discovered thread lifecycle methods;
+>
+> Learned a lot about synchronization and use of synchronized keyword and synchronized codeblocks;
+> 
+> Learned how to implement Runnable task with lambda API;
+> 
+> Volatile keyword and Happens-Before principle;
+> 
+> Atomic numbers and operations with them;
+> 
+> Cases which may occur a DeadLock;
+> 
+> Use of java.lang.Object methods such as wait()/notify();
+> 
+> Use of ReentrantLock, and it's difference compare to synchronized blocks and methods;
+>
+> How to use Callable interface and obtainment results of an asynchronous operations with Future interface. 
+> 
+> Use of Conditions with ReentrantLock;  
+
+
+
     
  

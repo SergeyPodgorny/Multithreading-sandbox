@@ -9,7 +9,7 @@ public class AnotherExample {
     };
 
 
-    static ExecutorService threadLauncher = Executors.newSingleThreadExecutor();
+    static ExecutorService threadLauncher = Executors.newWorkStealingPool();
 
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
