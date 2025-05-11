@@ -7,18 +7,14 @@ import java.util.concurrent.Executors;
 
 import com.multithreading.sandbox.benchmarks.benchmark.RunnableTask;
 import com.multithreading.sandbox.benchmarks.runnable.FactoryMethod.benchmark.MatrixFactoryLauncher;
-import com.multithreading.sandbox.benchmarks.runnable.java1.benchmark.AnonymousClass;
-import com.multithreading.sandbox.benchmarks.runnable.java1.benchmark.NestedClasses;
-import com.multithreading.sandbox.benchmarks.runnable.java1.benchmark.NestedStaticClasses;
-import com.multithreading.sandbox.benchmarks.runnable.java1.benchmark.RunnableWithLambda;
-import com.multithreading.sandbox.benchmarks.runnable.java1.benchmark.SingleThread;
+import com.multithreading.sandbox.benchmarks.runnable.java1.benchmark.*;
 
 public class Sandbox {
 
 	// this is a global field for every class
 	
 	
-	public static final int MATRIX_SIZE = 13; 
+	public static final int MATRIX_SIZE = 49;
 	
 	
 	public static final Executor taskLauncher = Executors.newWorkStealingPool();
@@ -27,34 +23,38 @@ public class Sandbox {
 	public static void main(String[] args) throws InterruptedException {
 				
 		// Single thread
-		
+
 		singleThreadingTime();
-		
-		
+
+
 		// nested non static classes
-		
+
 		nestedInnerClassesTime();
-		
-		
+
+
 		// nested static classes
-		
+
 		staticNestedClassesTime();
-		
+
 		// nested anonymous nested non static classes
-		
+
 		anonNestedClassesTime();
-		
+
 		// nested non static classes built by runable interface with lambdas
-		
+
 		runnableWithLambdas();
-		
+
 		// running the task with factory method pattern
-		
+
 		factoryThreading();
-		
+
 		// launching runnable task with Executros class
-		
+
 		executorThreading();
+
+		// launching CompleatableFutrue with ForkJoinCommonPool
+
+		compFutureTest();
 		
 		
 		// 
@@ -131,6 +131,18 @@ public class Sandbox {
 		Instant endTime3 = Instant.now();
 		
 		System.out.println("Execution time with nested non static classes built by runable interface with lambdas" + " " + Duration.between(startTime3, endTime3).toMillis());
+	}
+
+	private static void compFutureTest() {
+		Instant startTime3 = Instant.now();
+
+		var lambdaThreading = new CompFuture();
+
+		var matrix = lambdaThreading.getAMatrix();
+
+		Instant endTime3 = Instant.now();
+
+		System.out.println("Execution time with nested CompleatableFuture" + " " + Duration.between(startTime3, endTime3).toMillis());
 	}
 	
 	
